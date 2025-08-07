@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="Atlus' Keep"
+run/main_scene="uid://e27qowl5kw5m"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
