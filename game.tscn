@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwcve4ynlrbob"]
+
+[ext_resource type="PackedScene" uid="uid://d4gkjxnh52xpn" path="res://resources/TESTTEXT.glb" id="1_80nbo"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="TESTTEXT" parent="." instance=ExtResource("1_80nbo")]
+transform = Transform3D(0.221628, 0, 0, 0, 0.0463861, -0.359369, 0, 0.128666, 0.129558, -0.341736, 0, -0.00823295)
