@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://e27qowl5kw5m"]
+[gd_scene format=3 uid="uid://ddttjuh5g8ojg"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,3 +7,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
