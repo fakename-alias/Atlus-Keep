@@ -64,7 +64,9 @@ position = Vector2(576, 127.75)
 scale = Vector2(7.16667, 7.51563)
 texture = ExtResource("2_ekxnf")
 
-[node name="start" type="TextureButton" parent="."]
+[node name="menu buttons" type="Node" parent="."]
+
+[node name="start" type="TextureButton" parent="menu buttons"]
 offset_left = 480.0
 offset_top = 272.0
 offset_right = 518.0
@@ -75,7 +77,7 @@ texture_pressed = SubResource("AtlasTexture_8ln24")
 texture_hover = SubResource("AtlasTexture_bqqt6")
 stretch_mode = 0
 
-[node name="settings" type="TextureButton" parent="."]
+[node name="settings" type="TextureButton" parent="menu buttons"]
 offset_left = 440.0
 offset_top = 448.0
 offset_right = 495.0
@@ -85,7 +87,7 @@ texture_normal = SubResource("AtlasTexture_rtw2f")
 texture_pressed = SubResource("AtlasTexture_tbmy8")
 texture_hover = SubResource("AtlasTexture_jk1qb")
 
-[node name="exit" type="TextureButton" parent="."]
+[node name="exit" type="TextureButton" parent="menu buttons"]
 offset_left = 496.0
 offset_top = 536.0
 offset_right = 527.0
@@ -95,7 +97,7 @@ texture_normal = SubResource("AtlasTexture_5dd4i")
 texture_pressed = SubResource("AtlasTexture_lgwnu")
 texture_hover = SubResource("AtlasTexture_flqon")
 
-[node name="load" type="TextureButton" parent="."]
+[node name="load" type="TextureButton" parent="menu buttons"]
 offset_left = 496.0
 offset_top = 360.0
 offset_right = 527.0
