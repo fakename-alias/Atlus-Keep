@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://lu50erlqr6g"]
+
+[node name="LevelGrid" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
