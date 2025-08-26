@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cy8nomg4u4yjv"]
+[gd_scene load_steps=17 format=3 uid="uid://cy8nomg4u4yjv"]
 
 [ext_resource type="Texture2D" uid="uid://b6d80yhbdgrf1" path="res://assets/images/mm background.png" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://nwpwcfds8sag" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://4d6iilnq14nb" path="res://assets/images/Atlus Keep banner.png" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://yns7h2mncxvp" path="res://assets/sprites/menu buttons.png" id="3_bqqt6"]
 
@@ -53,6 +54,7 @@ atlas = ExtResource("3_bqqt6")
 region = Rect2(34, 18, 31, 13)
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_wu84c")
 
 [node name="MmBackground" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -76,6 +78,7 @@ texture_normal = SubResource("AtlasTexture_wu84c")
 texture_pressed = SubResource("AtlasTexture_8ln24")
 texture_hover = SubResource("AtlasTexture_bqqt6")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="settings" type="TextureButton" parent="menu buttons"]
 offset_left = 440.0
@@ -86,6 +89,7 @@ scale = Vector2(4.95, 4.95)
 texture_normal = SubResource("AtlasTexture_rtw2f")
 texture_pressed = SubResource("AtlasTexture_tbmy8")
 texture_hover = SubResource("AtlasTexture_jk1qb")
+metadata/_edit_use_anchors_ = true
 
 [node name="exit" type="TextureButton" parent="menu buttons"]
 offset_left = 496.0
@@ -96,6 +100,7 @@ scale = Vector2(5.17, 5.17)
 texture_normal = SubResource("AtlasTexture_5dd4i")
 texture_pressed = SubResource("AtlasTexture_lgwnu")
 texture_hover = SubResource("AtlasTexture_flqon")
+metadata/_edit_use_anchors_ = true
 
 [node name="load" type="TextureButton" parent="menu buttons"]
 offset_left = 496.0
@@ -106,3 +111,5 @@ scale = Vector2(5.17, 5.17)
 texture_normal = SubResource("AtlasTexture_oa1go")
 texture_pressed = SubResource("AtlasTexture_rcqid")
 texture_hover = SubResource("AtlasTexture_1ajci")
+
+[connection signal="pressed" from="menu buttons/exit" to="." method="_on_exit_pressed"]
