@@ -16,10 +16,7 @@ func testEsc():
 
 
 func _on_resume_pressed() -> void:
-	resume()
+	resume();
 
-func _on_save_pressed() -> void:
-	pass # replace with save game logic
-
-func _on_exit_pressed() -> void:
-	get_tree().quit()
+func _on_close_pressed() -> void:
+	get_tree().quit();
