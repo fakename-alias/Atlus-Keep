@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://6j627t0ljq8c"]
-
-[ext_resource type="Script" uid="uid://gy0eqyt4dora" path="res://turn order/entity_turn.gd" id="1_hglmd"]
-
-[node name="root" type="Node3D"]
-script = ExtResource("1_hglmd")
