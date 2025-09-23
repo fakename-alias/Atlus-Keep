@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwcve4ynlrbob"]
 
 [ext_resource type="PackedScene" uid="uid://d4gkjxnh52xpn" path="res://resources/TESTTEXT.glb" id="1_80nbo"]
-[ext_resource type="PackedScene" uid="uid://lu50erlqr6g" path="res://scenes/level/level_grid.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://buyvcneq8d7r5" path="res://scenes/level/level_notgrid.tscn" id="2_yqjtg"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="TESTTEXT" parent="." instance=ExtResource("1_80nbo")]
 transform = Transform3D(0.221628, 0, 0, 0, 0.0463861, -0.359369, 0, 0.128666, 0.129558, -0.341736, 4.10739, -0.00823295)
 
-[node name="LevelGrid" parent="." instance=ExtResource("2_yqjtg")]
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.646004, 0.763334, 0, -0.763334, -0.646004, 0, 8.5939, -7.04803)
+transform = Transform3D(1, 0, 0, 0, -0.204086, -0.978953, 0, 0.978953, -0.204086, 0, 18.1851, -7.04803)
+
+[node name="LevelNotgrid" parent="." instance=ExtResource("2_yqjtg")]
