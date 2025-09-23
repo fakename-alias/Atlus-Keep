@@ -13,9 +13,15 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("select"):
-		#print("Amabatakum")
-		#print(levelTiles)
 		
-		var random = randi_range(0,200)
+		var random = randi_range(0,255)
 		
-		donut.position = levelTiles[random].position
+		if levelTiles[random].walkable:
+			donut.position = levelTiles[random].position
+		else:
+			print("unwalkable at index: " + str(random))
+		
+		var donPos = level.world_to_cell(donut.position)
+		print(
+				level.has_cell(donPos)
+		)

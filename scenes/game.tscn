@@ -23,3 +23,9 @@ mesh = SubResource("TorusMesh_lnu2h")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0247637, 0.999693, 0, -0.999693, 0.0247637, 0, 29.8295, 0.920282)
+
+[node name="Units" type="Node3D" parent="."]
+
+[node name="UnitPlayers" type="Node3D" parent="Units"]
+
+[node name="UnitEnemies" type="Node3D" parent="Units"]
