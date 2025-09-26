@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Armor" load_steps=2 format=3 uid="uid://q16hdplgwhgh"]
+
+[ext_resource type="Script" uid="uid://dqgjsvrkfvrnc" path="res://items/stats/armor.gd" id="1_dqxss"]
+
+[resource]
+script = ExtResource("1_dqxss")
+slot = 2
+phys_armor = 10.0
+magic_resist = 5.0
+evasion_bonus = -2.0
+name = "Iron Buckler"
+description = "A small iron shield, provides simple defensive capabilities"
+weight = 1
+value = 5
+metadata/_custom_type_script = "uid://dqgjsvrkfvrnc"
