@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://6j627t0ljq8c"]
+
+[ext_resource type="Script" uid="uid://bmgoi5s874elb" path="res://in-combat stat card/stat_card.gd" id="2_d2w08"]
+[ext_resource type="Texture2D" uid="uid://bdtcv55i62dny" path="res://in-combat stat card/slime.png" id="2_xqx8w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d2w08"]
+size = Vector3(0.320313, 0.169434, 0)
+
+[node name="root" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture_filter = 0
+texture = ExtResource("2_xqx8w")
+script = ExtResource("2_d2w08")
+
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0106634, -0.0149158, -5.09322e-05)
+shape = SubResource("BoxShape3D_d2w08")
+
+[connection signal="texture_changed" from="Sprite3D" to="Sprite3D" method="_on_texture_changed"]
+[connection signal="input_event" from="Sprite3D/Area3D" to="Sprite3D" method="_on_input_event"]
+[connection signal="mouse_entered" from="Sprite3D/Area3D" to="Sprite3D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite3D/Area3D" to="Sprite3D" method="_on_mouse_exited"]
