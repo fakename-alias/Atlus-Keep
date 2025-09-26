@@ -1,0 +1,8 @@
+READ ME:
+To connect the input_event, mouse_entered and mouse_exited signals:
+click into entity_placeholder.tscn, 
+move to top left menu, click on the node Area3D, 
+move to top right, click on "Node" (next to "Inspector"), 
+go to "CollisionObject3D", double click on each required signal to connect to the script in the Sprite3D node
+
+https://docs.godotengine.org/en/4.4/getting_started/step_by_step/signals.html
