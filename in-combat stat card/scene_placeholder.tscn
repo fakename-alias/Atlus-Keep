@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhuqcwm8fwd1e"]
+
+[ext_resource type="PackedScene" uid="uid://6j627t0ljq8c" path="res://in-combat stat card/entity_placeholder.tscn" id="2_ryy7u"]
+
+[node name="root" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.31664)
+
+[node name="entity1" parent="." instance=ExtResource("2_ryy7u")]
+
+[node name="entity2" parent="." instance=ExtResource("2_ryy7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49571, 1.19209e-07, 0.208754)
+
+[node name="entity3" parent="." instance=ExtResource("2_ryy7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45615, 0.00679779, 0.694721)
