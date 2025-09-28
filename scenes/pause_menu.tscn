@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-[gd_scene load_steps=2 format=3 uid="uid://b2hhl4de1sud3"]
+[gd_scene load_steps=2 format=3 uid="uid://dpl5oh81cvjny"]
 
-[ext_resource type="Script" uid="uid://b65tl7j5453is" path="res://scripts/pause_menu.gd" id="1_n87rw"]
-=======
-[gd_scene load_steps=2 format=3 uid="uid://c5skmxbjeirsk"]
-
-[ext_resource type="Script" uid="uid://p6xr3blr6r8p" path="res://scripts/pause_menu.gd" id="1_n87rw"]
->>>>>>> origin/sililo-dev-branch-clone
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_n87rw"]
 
 [node name="Pause Menu" type="Control"]
 process_mode = 3
