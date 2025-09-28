@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Armor" load_steps=2 format=3 uid="uid://cvcccmfx4r30q"]
+
+[ext_resource type="Script" uid="uid://dqgjsvrkfvrnc" path="res://items/stats/armor.gd" id="1_52w3w"]
+
+[resource]
+script = ExtResource("1_52w3w")
+slot = 0
+phys_armor = 10.0
+magic_resist = 2.0
+evasion_bonus = -1.0
+name = "Iron Helmet"
+description = "A simple Iron helmet, keeping your head safe"
+weight = 1
+value = 0
+metadata/_custom_type_script = "uid://dqgjsvrkfvrnc"

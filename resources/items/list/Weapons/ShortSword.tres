@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://daooruwwl10lk"]
+
+[ext_resource type="Script" uid="uid://buflns3vvnpuv" path="res://items/stats/weapon.gd" id="1_5e8cs"]
+
+[resource]
+script = ExtResource("1_5e8cs")
+type = 0
+base_damage = 10.0
+stamina_cost = 5
+mana_cost = 0
+accuracy_bonus = 0.0
+range_tiles = 1
+two_handed = false
+name = "Short Sword"
+description = "A rusty short sword found on the ground"
+weight = 1
+value = 5
+metadata/_custom_type_script = "uid://buflns3vvnpuv"

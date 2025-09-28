@@ -1,0 +1,234 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=2 format=3 uid="uid://cifffglxj8fgi"]
+
+[sub_resource type="GDScript" id="GDScript_psm6s"]
+script/source = "extends Resource
+class_name CharacterStats
+
+@export var name: String = \"Unnamed\"
+@export var icon: Texture2D        #portrait for menus
+@export var sprite: PackedScene    #in game body
+
+# --- Base stats (level-up modifies these) --- 
+@warning_ignore(\"shadowed_global_identifier\")
+@export var str: int = 5
+@export var dex: int = 5
+@export var con: int = 5
+@export var int_stat: int = 5
+@export var lck: int = 5
+
+@export var leveling: Leveling
+@export var equipment: Equipment
+
+# --- Tunable constants (balance required) --- 
+@export var hp_per_con: int = 10          
+@export var stam_per_dex: int = 5       
+@export var mana_per_int: int = 10     
+@export var inventory_col_per_str: float = 0.25    #every 4 strength adds one column
+@export var speed_per_dex: float = 0.2        #1 extra speed per 5 dex
+@export var acc_base: float = 0.80        # 80 percent base
+@export var acc_per_dex: float = 0.02     # +2% hit per DEX (before caps)
+@export var crit_per_lck: float = 0.02    # 2 percent crit per luck
+@export var crit_damage_multiplier: float = 1.5 # 1.5x damage on crit
+@export var drop_rate_per_lck: float = 0.01   # 1 percent drop chance per LCK
+
+# --- Unsure about these ones --- 
+@export var phys_scale_per_str: float = 0.6  
+@export var rng_scale_per_dex: float  = 0.5
+@export var mgc_scale_per_int: float = 0.7 # mages will do the most damage, but are squishiest
+@export var evasion_scale_per_dex: float = 0.5 # 1 percent accuracy reduction per 2 dex
+@export var range_per_dex: float = 0.1    # every 10 dex increases tile range by 1
+@export var min_hit: float = 0.05         # floor + ceiling prevent extremes
+@export var max_hit: float = 0.98
+
+# --- Standard pools --- 
+var hp: int
+var stamina: int
+var mana: int
+
+func init_current_pools() -> void:
+	hp = get_max_hp()
+	stamina = get_max_stamina()
+	mana = get_max_mana()
+
+# --- Leveling System --- 
+func init_leveling() -> void:
+	if leveling:
+		leveling.level_up.connect(_on_level_up)
+
+func _on_level_up(new_level: int) -> void:
+	apply_level_up(new_level)
+	hp = get_max_hp()
+	mana = get_max_mana()
+	stamina = get_max_stamina()
+	#optional refill on lvl up
+
+@warning_ignore(\"unused_parameter\")
+func apply_level_up(new_level: int) -> void:
+	str += 1
+	dex += 1
+	con += 1
+	int_stat += 1
+	lck += 1
+	#tweak to our taste
+
+# --- Add Equipment Ring Bonuses --- 
+func get_effective_str() -> int:
+	if equipment:
+		return str + equipment.bonus_str()
+	return str
+
+func get_effective_dex() -> int:
+	if equipment:
+		return dex + equipment.bonus_dex()
+	return dex
+	
+func get_effective_con() -> int:
+	if equipment:
+		return con + equipment.bonus_con()
+	return con
+	
+func get_effective_int() -> int:
+	if equipment:
+		return int_stat + equipment.bonus_int_stat()
+	return int_stat
+
+func get_effective_lck() -> int:
+	if equipment:
+		return lck + equipment.bonus_lck()
+	return lck
+
+# --- Derived stats (formulas to give final stat values) ---
+func get_max_hp() -> int:
+	return 50 + get_effective_con() * hp_per_con
+
+func get_max_stamina() -> int:
+	return 10 + get_effective_dex() * stam_per_dex
+
+func get_max_mana() -> int:
+	return 5 + get_effective_int() * mana_per_int
+
+func get_invetory_columns() -> int:
+	return int(floor(get_effective_str() * inventory_col_per_str))  # base 4 + STR scaling
+
+func get_speed() -> float:
+	return 5.0 + get_effective_dex() * speed_per_dex
+
+func get_accuracy() -> float:
+	var acc = acc_base + get_effective_dex() * acc_per_dex
+	if equipment:
+		acc += equipment.total_accuracy_bonus()
+	return clamp(acc, min_hit, max_hit)
+
+func get_range() -> float:
+	return 1.0 + get_effective_dex() * range_per_dex
+
+func get_phys_damage_multiplier() -> float:
+	return 1.0 + get_effective_str() * phys_scale_per_str
+
+func get_ranged_damage_multiplier() -> float:
+	return 1.0 + get_effective_dex() * rng_scale_per_dex
+
+func get_magic_damage_multiplier() -> float:
+	return 1.0 + get_effective_int() * mgc_scale_per_int
+
+func get_crit_chance() -> float:
+	return clamp(get_effective_lck() * crit_per_lck, 0.0, 0.8)  # cap at 80 percent
+
+func get_drop_bonus() -> float:
+	return get_effective_lck() * drop_rate_per_lck #added bonus to drop chances
+
+func get_dodge_chance() -> float:
+	var dodge = get_effective_dex() * evasion_scale_per_dex
+	if equipment:
+		dodge += equipment.total_evasion_bonus()
+	return dodge
+
+# --- Rolls and resolution functions ---
+func roll_hit(target: CharacterStats) -> bool:
+	#takes attackers accuracy - targets dodge bonus then rolls true if to_hit is less than the random hit check
+	#true means the attack lands
+	var to_hit = clamp(get_accuracy() - target.get_dodge_chance(), min_hit, max_hit)
+	return randf() < to_hit
+
+func roll_crit() -> bool:
+	return randf() < get_crit_chance()
+
+#for these weapon base and armor value are default values until armor and weapons are coded
+func physical_attack(target: CharacterStats) -> int:
+	var weapon:= equipment.main_hand #what if no weapon equipped?
+	if stamina < weapon.stamina_cost:
+		return 0 #print exhausted
+	if not roll_hit(target):
+		#edit to display \"Miss\"
+		return 0
+	#grab pc's weapon damage
+	var damage: float = weapon.base_damage * get_phys_damage_multiplier()
+	
+	if roll_crit():
+		damage *= crit_damage_multiplier
+	#grab the targets armor value and decrease the damage by it
+	damage -= target.equipment.total_phys_armor()
+	#edit to add indicator that atk was a crit
+	stamina -= weapon.stamina_cost
+	return int(round(damage))
+
+func ranged_attack(target: CharacterStats) -> int:
+	var weapon:= equipment.main_hand
+	if stamina < weapon.stamina_cost:
+		return 0 #print exhausted
+	if not roll_hit(target):
+		#edit to display \"Miss\"
+		return 0
+	
+	var damage: float = weapon.base_damage * get_ranged_damage_multiplier()
+	
+	if roll_crit():
+		damage *= crit_damage_multiplier
+	damage -= target.equipment.total_phys_armor()
+	#edit to add indicator that atk was a crit
+	stamina -= weapon.mana_cost
+	return int(round(damage))
+
+func magic_attack(target: CharacterStats) -> int:
+	var weapon:= equipment.main_hand
+	if mana < weapon.mana_cost:
+		return 0 #Exhausted
+	if not roll_hit(target):
+		#edit to display \"Miss\"
+		return 0
+
+	var damage = equipment.main_hand.base_damage * get_magic_damage_multiplier()
+	if roll_crit():
+		damage *= crit_damage_multiplier
+	damage -= target.equipment.total_magic_resist()
+	#edit to add indicator that atk was a crit
+	mana -= weapon.mana_cost
+	return int(round(damage))
+"
+
+[resource]
+script = SubResource("GDScript_psm6s")
+name = "Unnamed"
+str = 5
+dex = 5
+con = 5
+int_stat = 5
+lck = 5
+hp_per_con = 10
+stam_per_dex = 5
+mana_per_int = 10
+inventory_col_per_str = 0.25
+speed_per_dex = 0.2
+acc_base = 0.8
+acc_per_dex = 0.02
+crit_per_lck = 0.02
+crit_damage_multiplier = 1.5
+drop_rate_per_lck = 0.01
+phys_scale_per_str = 0.6
+rng_scale_per_dex = 0.5
+mgc_scale_per_int = 0.7
+evasion_scale_per_dex = 0.5
+range_per_dex = 0.1
+min_hit = 0.05
+max_hit = 0.98
+metadata/_custom_type_script = "uid://du37i7dgwojsu"

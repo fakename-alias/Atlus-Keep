@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Armor" load_steps=2 format=3 uid="uid://by0oteiu575bv"]
+
+[ext_resource type="Script" uid="uid://dqgjsvrkfvrnc" path="res://items/stats/armor.gd" id="1_naheq"]
+
+[resource]
+script = ExtResource("1_naheq")
+slot = 1
+phys_armor = 15.0
+magic_resist = 5.0
+evasion_bonus = -5.0
+name = "Iron Armor"
+description = "Forged armor providing moderate defensive capabilities"
+weight = 1
+value = 10
+metadata/_custom_type_script = "uid://dqgjsvrkfvrnc"
