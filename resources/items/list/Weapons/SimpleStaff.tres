@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://ck680u6er6swh"]
+
+[ext_resource type="Script" uid="uid://buflns3vvnpuv" path="res://items/stats/weapon.gd" id="1_hhp83"]
+
+[resource]
+script = ExtResource("1_hhp83")
+type = 2
+base_damage = 15.0
+stamina_cost = 2
+mana_cost = 10
+accuracy_bonus = 0.0
+range_tiles = 1
+two_handed = true
+name = "Simple Staff"
+description = "An enchanted staff for basic use"
+weight = 1
+value = 8
+metadata/_custom_type_script = "uid://buflns3vvnpuv"

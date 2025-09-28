@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Jewelry" load_steps=2 format=3 uid="uid://eqnad0rvs12r"]
+
+[ext_resource type="Script" uid="uid://b04gm8q2ksjrd" path="res://items/stats/jewelry.gd" id="1_icb0f"]
+
+[resource]
+script = ExtResource("1_icb0f")
+strength_bonus = 2
+dexterity_bonus = 0
+constitution_bonus = 0
+intelligence_bonus = 0
+luck_bonus = 0
+name = "Ring of Added Strength"
+description = "Quite a thick ring, this definitely packs its punch"
+weight = 1
+value = 0
+metadata/_custom_type_script = "uid://b04gm8q2ksjrd"
