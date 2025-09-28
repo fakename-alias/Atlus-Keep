@@ -1,0 +1,168 @@
+[gd_scene load_steps=15 format=3 uid="uid://cofeqmulerai"]
+
+[ext_resource type="Texture2D" uid="uid://ciibwboh403pa" path="res://assets/sprites/Overworld_tiles.png" id="1_16ktt"]
+[ext_resource type="Script" uid="uid://cvejy651xhj2" path="res://scripts/map.gd" id="1_m1b5j"]
+[ext_resource type="Texture2D" uid="uid://730i354jpw3m" path="res://assets/sprites/Overworld_party.png" id="3_eab5i"]
+[ext_resource type="Texture2D" uid="uid://bcax3181yggp4" path="res://assets/sprites/Room_Button.png" id="3_u2ss0"]
+[ext_resource type="Texture2D" uid="uid://4cy7mbx8bm5f" path="res://assets/sprites/Party_Button.png" id="4_356oe"]
+[ext_resource type="Texture2D" uid="uid://dmnlhxxsxwn0d" path="res://assets/sprites/Settings_Button.png" id="5_3gvrs"]
+[ext_resource type="Script" uid="uid://bj7fshjb7kgfl" path="res://scripts/Overworld_party.gd" id="6_fkyvp"]
+[ext_resource type="Script" uid="uid://chi3jhy6tsueg" path="res://scripts/camera_2d.gd" id="8_qjxaj"]
+
+[sub_resource type="GDScript" id="GDScript_3gvrs"]
+script/source = "extends Node2D
+
+
+func _on_room_button_pressed() -> void:
+	pass # Change to combat scene
+
+
+func _on_party_button_pressed() -> void:
+	pass # Open party viewer scene
+
+
+func _on_settings_button_pressed() -> void:
+	pass # open settings
+"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u2ss0"]
+texture = ExtResource("1_16ktt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_m1b5j"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_u2ss0")
+
+[sub_resource type="Theme" id="Theme_356oe"]
+
+[sub_resource type="Theme" id="Theme_fkyvp"]
+
+[sub_resource type="Theme" id="Theme_qjxaj"]
+
+[node name="Overworld" type="Node2D"]
+script = SubResource("GDScript_3gvrs")
+
+[node name="Map" type="TileMapLayer" parent="."]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_m1b5j")
+script = ExtResource("1_m1b5j")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="BottomPanel" type="BoxContainer" parent="UI"]
+z_index = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = SubResource("Theme_356oe")
+
+[node name="RoomButton" type="Button" parent="UI/BottomPanel"]
+layout_mode = 2
+icon = ExtResource("3_u2ss0")
+metadata/_edit_use_anchors_ = true
+
+[node name="PartyButton" type="Button" parent="UI/BottomPanel"]
+layout_mode = 2
+icon = ExtResource("4_356oe")
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsButton" type="Button" parent="UI/BottomPanel"]
+layout_mode = 2
+icon = ExtResource("5_3gvrs")
+
+[node name="GoldLabel" type="Label" parent="UI"]
+anchors_preset = -1
+anchor_left = 0.956597
+anchor_right = 1.0
+anchor_bottom = 0.0354938
+offset_left = -27.9998
+offset_right = 48.2642
+offset_bottom = 21.5802
+grow_horizontal = 0
+theme = SubResource("Theme_fkyvp")
+text = "GOLD: TBI"
+metadata/_edit_use_anchors_ = true
+
+[node name="Terminal" type="Panel" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 417.0
+grow_vertical = 0
+theme = SubResource("Theme_qjxaj")
+
+[node name="Party" type="Area2D" parent="."]
+script = ExtResource("6_fkyvp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Party"]
+texture = ExtResource("3_eab5i")
+
+[node name="RayCast2D" type="RayCast2D" parent="Party"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(503, 261)
+script = ExtResource("8_qjxaj")
+
+[connection signal="pressed" from="UI/BottomPanel/RoomButton" to="." method="_on_room_button_pressed"]
+[connection signal="pressed" from="UI/BottomPanel/PartyButton" to="." method="_on_party_button_pressed"]
+[connection signal="pressed" from="UI/BottomPanel/SettingsButton" to="." method="_on_settings_button_pressed"]
