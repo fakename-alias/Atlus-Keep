@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=2 format=3 uid="uid://c5skmxbjeirsk"]
 
 [ext_resource type="Script" uid="uid://p6xr3blr6r8p" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+=======
+[gd_scene load_steps=2 format=3 uid="uid://dpl5oh81cvjny"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+>>>>>>> Stashed changes
 
 [node name="Pause Menu" type="Control"]
 process_mode = 3
