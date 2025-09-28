@@ -50,6 +50,7 @@ func world_to_cell(worldPos: Vector3) -> Vector3i:
 # Return world position from cell
 func cell_to_world(cell: Vector3i) -> Vector3:
 	return Vector3(cell.x * cellSize, yLevel, cell.z * cellSize)
+	
 
 # Return if tile at cell position c
 func has_cell(c: Vector3i) -> bool:

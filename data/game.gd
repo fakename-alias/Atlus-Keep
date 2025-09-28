@@ -11,17 +11,19 @@ func _ready():
 	donut.position = $LevelNotgrid/Tiles/Tile1.position
 
 
+#region == DEBUG ==
 func _input(event):
 	if event.is_action_pressed("select"):
 		
 		var random = randi_range(0,255)
 		
+		## Move placeholder donut to random cell to demonstrate grid movement
 		if levelTiles[random].walkable:
 			donut.position = levelTiles[random].position
+			
+			var currCell : Vector3i = levelTiles[random].get_cell_pos()
+			
+			print("Donut moved to cell position: " + str(currCell))
 		else:
 			print("unwalkable at index: " + str(random))
-		
-		var donPos = level.world_to_cell(donut.position)
-		print(
-				level.has_cell(donPos)
-		)
+#endregion == DEBUG ==
