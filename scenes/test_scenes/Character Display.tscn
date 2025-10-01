@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfm8m5bbffjni"]
 
-[ext_resource type="PackedScene" uid="uid://cu6nysuwrt1q7" path="res://resources/Characters/Slime.tscn" id="1_2l740"]
+[ext_resource type="PackedScene" uid="uid://cu6nysuwrt1q7" path="res://resources/Characters/enemy_units/slime/Slime.tscn" id="1_2l740"]
 
 [node name="CharacterDisplay" type="Node3D"]
 
