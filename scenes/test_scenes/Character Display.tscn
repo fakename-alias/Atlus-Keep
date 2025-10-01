@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfm8m5bbffjni"]
+
+[ext_resource type="PackedScene" uid="uid://cu6nysuwrt1q7" path="res://resources/Characters/Slime.tscn" id="1_2l740"]
+
+[node name="CharacterDisplay" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0370527, 0.025584, 0.651144)
+
+[node name="Slime" parent="." instance=ExtResource("1_2l740")]

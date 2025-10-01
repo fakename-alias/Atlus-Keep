@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwcve4ynlrbob"]
+[gd_scene load_steps=5 format=3 uid="uid://fo2ng2ble3l"]
 
-[ext_resource type="PackedScene" uid="uid://d4gkjxnh52xpn" path="res://resources/TESTTEXT.glb" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://d4gkjxnh52xpn" path="res://resources/Test Stuff/TESTTEXT.glb" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bxiusvt4efsm" path="res://data/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://buyvcneq8d7r5" path="res://scenes/level/level_notgrid.tscn" id="2_yqjtg"]
 

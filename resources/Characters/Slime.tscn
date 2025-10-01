@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cu6nysuwrt1q7"]
+
+[ext_resource type="Script" uid="uid://cg80aklgxr2f6" path="res://resources/Characters/slime.gd" id="1_sjpnk"]
+[ext_resource type="Resource" uid="uid://dk43vj7ox1mrb" path="res://resources/character_stats/Slime.tres" id="2_1gbc6"]
+[ext_resource type="Script" uid="uid://bmgoi5s874elb" path="res://in-combat stat card/stat_card.gd" id="2_eehkl"]
+[ext_resource type="Texture2D" uid="uid://bdtcv55i62dny" path="res://in-combat stat card/slime.png" id="3_6vutp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1gbc6"]
+size = Vector3(0.349152, 0.235352, 0.105042)
+
+[node name="Slime" type="Node3D"]
+script = ExtResource("1_sjpnk")
+stats = ExtResource("2_1gbc6")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0176675, 0.0309844, -0.0196412)
+texture = ExtResource("3_6vutp")
+script = ExtResource("2_eehkl")
+stats = ExtResource("2_1gbc6")
+
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00764465, 0.0161133, 0.0530701)
+shape = SubResource("BoxShape3D_1gbc6")
+
+[connection signal="input_event" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_mouse_exited"]
