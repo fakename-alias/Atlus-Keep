@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://xx1wnyxbk8jr"]
+
+[ext_resource type="Script" uid="uid://dmx5xsle0mem" path="res://resources/Characters/playable_characters/wizard/wizard.gd" id="1_abvqn"]
+[ext_resource type="Texture2D" uid="uid://bk8gir13gvb5y" path="res://assets/sprites/wizard sprite-Sheet.png" id="1_taj60"]
+[ext_resource type="Resource" uid="uid://bxkei7jq8k8tg" path="res://resources/Characters/playable_characters/wizard/wizard.tres" id="2_ubbew"]
+[ext_resource type="Script" uid="uid://bmgoi5s874elb" path="res://scripts/stat_card.gd" id="3_7m246"]
+[ext_resource type="PackedScene" uid="uid://cum250u7fsgt0" path="res://resources/Test Stuff/health bar.tscn" id="5_04ggr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04ggr"]
+size = Vector3(0.128532, 0.323792, 0.0357666)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_j84qs"]
+viewport_path = NodePath("HealthBarViewport")
+
+[node name="Wizard" type="Node3D"]
+script = ExtResource("1_abvqn")
+stats = ExtResource("2_ubbew")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture_filter = 0
+texture = ExtResource("1_taj60")
+region_enabled = true
+region_rect = Rect2(0, 0, 12, 32)
+script = ExtResource("3_7m246")
+stats = ExtResource("2_ubbew")
+
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00149918, -0.00369263, -0.000793457)
+shape = SubResource("BoxShape3D_04ggr")
+
+[node name="HealthBarViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(128, 32)
+
+[node name="HealthBarUI" parent="HealthBarViewport" instance=ExtResource("5_04ggr")]
+
+[node name="HealthBarSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186907, 0)
+texture = SubResource("ViewportTexture_j84qs")
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 4)
+
+[connection signal="input_event" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_mouse_exited"]

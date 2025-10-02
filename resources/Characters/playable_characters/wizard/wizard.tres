@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://clhmukqrfpfnw"
 
 [resource]
 script = ExtResource("1_dhno6")
-name = "Unnamed"
+name = "Wizard"
 str = 2
 dex = 5
 con = 3

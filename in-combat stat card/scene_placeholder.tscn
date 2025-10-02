@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhuqcwm8fwd1e"]
 
-[ext_resource type="PackedScene" uid="uid://6j627t0ljq8c" path="res://turn order/entity_placeholder.tscn" id="2_ryy7u"]
+[ext_resource type="PackedScene" uid="uid://6j627t0ljq8c" path="res://in-combat stat card/entity_placeholder.tscn" id="2_ryy7u"]
 
 [node name="root" type="Node3D"]
 

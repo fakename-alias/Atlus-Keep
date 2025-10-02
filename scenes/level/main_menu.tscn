@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cxxc6gn7k254b" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://4d6iilnq14nb" path="res://assets/images/Atlus Keep banner.png" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://yns7h2mncxvp" path="res://assets/sprites/menu buttons.png" id="3_bqqt6"]
-[ext_resource type="PackedScene" uid="uid://dpl5oh81cvjny" path="res://scenes/pause_menu.tscn" id="5_8ln24"]
+[ext_resource type="PackedScene" uid="uid://c5skmxbjeirsk" path="res://scenes/pause_menu.tscn" id="5_8ln24"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]
 atlas = ExtResource("3_bqqt6")
@@ -114,4 +114,5 @@ texture_hover = SubResource("AtlasTexture_1ajci")
 [node name="Pause Menu" parent="." instance=ExtResource("5_8ln24")]
 visible = false
 
+[connection signal="pressed" from="menu buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="menu buttons/exit" to="." method="_on_exit_pressed"]

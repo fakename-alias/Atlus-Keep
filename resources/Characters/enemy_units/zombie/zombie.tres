@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=2 format=3 uid="uid://de3nox56dwkye"]
+
+[ext_resource type="Script" uid="uid://bbq0dv2hard87" path="res://resources/character_stats/character_stats.gd" id="1_so06l"]
+
+[resource]
+script = ExtResource("1_so06l")
+name = "Zombie"
+str = 9
+dex = 2
+con = 7
+int_stat = 2
+lck = 2
+hp_per_con = 10
+stam_per_dex = 5
+mana_per_int = 10
+inventory_col_per_str = 0.25
+speed_per_dex = 0.2
+acc_base = 0.8
+acc_per_dex = 0.02
+crit_per_lck = 0.02
+crit_damage_multiplier = 1.5
+drop_rate_per_lck = 0.01
+phys_scale_per_str = 0.6
+rng_scale_per_dex = 0.5
+mgc_scale_per_int = 0.7
+evasion_scale_per_dex = 0.5
+range_per_dex = 0.1
+min_hit = 0.05
+max_hit = 0.98
+metadata/_custom_type_script = "uid://bbq0dv2hard87"

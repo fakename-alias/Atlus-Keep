@@ -1,15 +1,32 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=2 format=3 uid="uid://dk43vj7ox1mrb"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://dk43vj7ox1mrb"]
 
-[ext_resource type="Script" uid="uid://bbq0dv2hard87" path="res://resources/character_stats/character_stats.gd" id="1_1ncn3"]
+[ext_resource type="Script" uid="uid://cs70hxft2tgmh" path="res://resources/character_stats/equipment.gd" id="1_j2kro"]
+[ext_resource type="Script" uid="uid://clhmukqrfpfnw" path="res://resources/character_stats/leveling.gd" id="2_jbqhk"]
+[ext_resource type="Script" uid="uid://bbq0dv2hard87" path="res://resources/character_stats/character_stats.gd" id="3_esmj1"]
+
+[sub_resource type="Resource" id="Resource_lbvyk"]
+script = ExtResource("1_j2kro")
+metadata/_custom_type_script = "uid://cs70hxft2tgmh"
+
+[sub_resource type="Resource" id="Resource_jd5uv"]
+script = ExtResource("2_jbqhk")
+level = 1
+xp = 0
+max_level = 10
+base_xp = 100
+curve_pow = 1.5
+metadata/_custom_type_script = "uid://clhmukqrfpfnw"
 
 [resource]
-script = ExtResource("1_1ncn3")
+script = ExtResource("3_esmj1")
 name = "Slime"
 str = 6
 dex = 6
 con = 12
 int_stat = 0
 lck = 3
+leveling = SubResource("Resource_jd5uv")
+equipment = SubResource("Resource_lbvyk")
 hp_per_con = 10
 stam_per_dex = 5
 mana_per_int = 10

@@ -19,12 +19,12 @@ metadata/_custom_type_script = "uid://clhmukqrfpfnw"
 
 [resource]
 script = ExtResource("1_vcbia")
-name = "Unnamed"
+name = "Rogue"
 str = 3
-dex = 7
+dex = 9
 con = 4
 int_stat = 5
-lck = 6
+lck = 8
 leveling = SubResource("Resource_vfyy6")
 equipment = SubResource("Resource_2didx")
 hp_per_con = 10
