@@ -39,7 +39,7 @@ func _ready() -> void:
 					min(boundsMax.x, cell.x),
 					0,
 					min(boundsMax.z, cell.z))
-	print(tileAt.size())
+	print(str(tileAt.size()))
 
 # Return cell from world position
 func world_to_cell(worldPos: Vector3) -> Vector3i:
@@ -55,6 +55,18 @@ func cell_to_world(cell: Vector3i) -> Vector3:
 # Return if tile at cell position c
 func has_cell(c: Vector3i) -> bool:
 	return tileAt.has(c)
+
+func get_cell(c: Vector3i) -> Tile:
+	if not has_cell(c):
+		return null
+	
+	var tile = tileAt[c]
+	var meta = tile as Tile
+	if meta:		
+		return meta
+	else:
+		print("No tile at: " + str(c))
+	return null;
 
 # Check if tile is walkable at cell pos c
 func tile_walkable(c : Vector3i) -> bool:

@@ -9,6 +9,8 @@ var tileArray = []
 
 func _ready():
 	donut.position = $LevelNotgrid/Tiles/Tile1.position
+	
+	print("Tile: "+ str(levelTileMaster.get_child(19)) + "- next tile: " + str(levelTileMaster.get_child(19).get_node_north()))
 
 
 #region == DEBUG ==
@@ -23,7 +25,9 @@ func _input(event):
 			
 			var currCell : Vector3i = levelTiles[random].get_cell_pos()
 			
-			print("Donut moved to cell position: " + str(currCell))
+			print("Donut moved to cell position: " + str(currCell) + ", or " + str(level.get_cell(currCell).name))
+			
+			level.get_cell(currCell)
 		else:
 			print("unwalkable at index: " + str(random))
 #endregion == DEBUG ==
