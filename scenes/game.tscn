@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://fo2ng2ble3l"]
+[gd_scene load_steps=6 format=3 uid="uid://fo2ng2ble3l"]
 
 [ext_resource type="PackedScene" uid="uid://d4gkjxnh52xpn" path="res://resources/Test Stuff/TESTTEXT.glb" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bxiusvt4efsm" path="res://data/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://buyvcneq8d7r5" path="res://scenes/level/level_notgrid.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://b3klkwrpmxees" path="res://scenes/characters/Unit.tscn" id="4_lbhrr"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_lnu2h"]
 
@@ -13,7 +14,7 @@ script = ExtResource("1_lnu2h")
 transform = Transform3D(0.221628, 0, 0, 0, 0.0463861, -0.359369, 0, 0.128666, 0.129558, -0.341736, 4.10739, -0.00823295)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.204086, -0.978953, 0, 0.978953, -0.204086, 0, 18.1851, -7.04803)
+transform = Transform3D(1, 0, 0, 0, -0.9942, 0.107548, 0, -0.107548, -0.9942, 0, 18.1851, -7.04803)
 
 [node name="LevelNotgrid" parent="." instance=ExtResource("2_yqjtg")]
 
@@ -22,10 +23,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2104, 7.58603, 0)
 mesh = SubResource("TorusMesh_lnu2h")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0247637, 0.999693, 0, -0.999693, 0.0247637, 0, 29.8295, 0.920282)
+transform = Transform3D(1, 0, 0, 0, 0.623102, 0.782141, 0, -0.782141, 0.623102, 0, 16.1947, 22.7125)
 
 [node name="Units" type="Node3D" parent="."]
 
 [node name="UnitPlayers" type="Node3D" parent="Units"]
 
+[node name="Unit" parent="Units/UnitPlayers" instance=ExtResource("4_lbhrr")]
+
 [node name="UnitEnemies" type="Node3D" parent="Units"]
+
+[node name="Unit" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
+
+[node name="Unit2" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
+
+[node name="Unit3" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
+
+[node name="TurnManager" type="Node" parent="."]

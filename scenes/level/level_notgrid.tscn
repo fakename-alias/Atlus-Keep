@@ -1,9 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://buyvcneq8d7r5"]
 
 [ext_resource type="Script" uid="uid://yv82eumdspxe" path="res://data/services/level_service.gd" id="1_8c8j4"]
+[ext_resource type="ArrayMesh" uid="uid://ba14l5scjd75w" path="res://resources/indicator.obj" id="2_s17jq"]
 [ext_resource type="Script" uid="uid://vthil6vav1ua" path="res://data/tile.gd" id="2_unaav"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_huimw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_unaav"]
 size = Vector3(1.99927, 0.0735168, 2.00092)
@@ -46,11 +45,11 @@ shadow_mesh = SubResource("ArrayMesh_txn4b")
 script = ExtResource("1_8c8j4")
 
 [node name="Tiles" type="Node3D" parent="."]
-visible = false
 
 [node name="Tile1" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 1.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile1"]
@@ -61,7 +60,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile2" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 1.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile2"]
@@ -72,7 +72,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile3" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 1.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile3"]
@@ -83,7 +84,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile4" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 1.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile4"]
@@ -94,7 +96,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile5" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 1.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile5"]
@@ -105,7 +108,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile6" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 0.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile6"]
@@ -116,7 +120,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile7" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 0.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile7"]
@@ -127,7 +132,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile8" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 0.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile8"]
@@ -138,7 +144,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile9" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 0.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile9"]
@@ -149,7 +156,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile10" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 0.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile10"]
@@ -160,7 +168,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile11" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 0.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile11"]
@@ -171,7 +180,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile12" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile12"]
@@ -182,7 +192,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile13" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 1.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile13"]
@@ -193,7 +204,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile14" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 1.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile14"]
@@ -204,7 +216,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile15" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 1.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile15"]
@@ -215,7 +228,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile16" type="MeshInstance3D" parent="Tiles" node_paths=PackedStringArray("node_west", "node_south")]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 1.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 node_west = NodePath("../Tile32")
 node_south = NodePath("../Tile15")
@@ -228,7 +242,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile17" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 1.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile17"]
@@ -239,7 +254,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile18" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 1.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile18"]
@@ -250,7 +266,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile19" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 1.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile19"]
@@ -261,7 +278,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile20" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 1.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile20"]
@@ -272,7 +290,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile21" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 1.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile21"]
@@ -283,7 +302,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile22" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 0.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile22"]
@@ -294,7 +314,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile23" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 0.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile23"]
@@ -305,7 +326,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile24" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 0.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile24"]
@@ -316,7 +338,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile25" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 0.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile25"]
@@ -327,7 +350,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile26" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 0.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile26"]
@@ -338,7 +362,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile27" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 0.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile27"]
@@ -349,7 +374,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile28" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile28"]
@@ -360,7 +386,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile29" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 1.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile29"]
@@ -371,7 +398,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile30" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 1.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile30"]
@@ -382,7 +410,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile31" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 1.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile31"]
@@ -393,7 +422,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile32" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 16.25, 1.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile32"]
@@ -404,7 +434,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile33" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 1.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile33"]
@@ -415,7 +446,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile34" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 1.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile34"]
@@ -426,7 +458,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile35" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 1.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile35"]
@@ -437,7 +470,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile36" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 1.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile36"]
@@ -448,7 +482,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile37" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 0.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile37"]
@@ -459,7 +494,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile38" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 0.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile38"]
@@ -470,7 +506,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile39" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 0.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile39"]
@@ -481,7 +518,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile40" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 0.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile40"]
@@ -492,7 +530,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile41" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 0.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile41"]
@@ -503,7 +542,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile42" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 0.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile42"]
@@ -514,7 +554,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile43" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 0.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile43"]
@@ -525,7 +566,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile44" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 0.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile44"]
@@ -536,7 +578,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile45" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 1.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile45"]
@@ -547,7 +590,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile46" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 1.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile46"]
@@ -558,7 +602,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile47" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 1.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile47"]
@@ -569,7 +614,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile48" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 13.75, 1.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile48"]
@@ -580,7 +626,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile49" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 1.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile49"]
@@ -591,7 +638,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile50" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 1.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile50"]
@@ -602,7 +650,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile51" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 1.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile51"]
@@ -613,7 +662,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile52" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 0.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile52"]
@@ -624,7 +674,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile53" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 0.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile53"]
@@ -635,7 +686,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile54" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 0.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile54"]
@@ -646,7 +698,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile55" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 0.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile55"]
@@ -657,7 +710,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile56" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 0.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile56"]
@@ -668,7 +722,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile57" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 0.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile57"]
@@ -679,7 +734,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile58" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 0.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile58"]
@@ -690,7 +746,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile59" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 0.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile59"]
@@ -701,7 +758,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile60" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 0.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile60"]
@@ -712,7 +770,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile61" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 0.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile61"]
@@ -723,7 +782,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile62" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 1.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile62"]
@@ -734,7 +794,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile63" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 1.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile63"]
@@ -745,7 +806,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile64" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 11.25, 1.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile64"]
@@ -756,7 +818,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile65" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 1.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile65"]
@@ -767,7 +830,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile66" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 1.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile66"]
@@ -778,7 +842,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile67" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 0.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile67"]
@@ -789,7 +854,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile68" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 0.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile68"]
@@ -800,7 +866,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile69" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 0.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile69"]
@@ -811,7 +878,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile70" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 0.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile70"]
@@ -822,7 +890,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile71" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 0.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile71"]
@@ -833,7 +902,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile72" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile72"]
@@ -844,7 +914,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile73" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile73"]
@@ -855,7 +926,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile74" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile74"]
@@ -866,7 +938,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile75" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 0.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile75"]
@@ -877,7 +950,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile76" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 0.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile76"]
@@ -888,7 +962,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile77" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 0.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile77"]
@@ -899,7 +974,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile78" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 0.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile78"]
@@ -910,7 +986,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile79" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 1.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile79"]
@@ -921,7 +998,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile80" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 1.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile80"]
@@ -932,7 +1010,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile81" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile81"]
@@ -943,7 +1022,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile82" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile82"]
@@ -954,7 +1034,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile83" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile83"]
@@ -965,7 +1046,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile84" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile84"]
@@ -976,7 +1058,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile85" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile85"]
@@ -987,7 +1070,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile86" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile86"]
@@ -998,7 +1082,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile87" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 1.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile87"]
@@ -1009,7 +1094,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile88" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile88"]
@@ -1020,7 +1106,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile89" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile89"]
@@ -1031,7 +1118,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile90" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile90"]
@@ -1042,7 +1130,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile91" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 1.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile91"]
@@ -1053,7 +1142,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile92" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile92"]
@@ -1064,7 +1154,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile93" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile93"]
@@ -1075,7 +1166,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile94" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile94"]
@@ -1086,7 +1178,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile95" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile95"]
@@ -1097,7 +1190,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile96" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 6.25, 0.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile96"]
@@ -1108,7 +1202,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile97" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 0.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile97"]
@@ -1119,7 +1214,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile98" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 0.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile98"]
@@ -1130,7 +1226,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile99" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 0.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile99"]
@@ -1141,7 +1238,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile100" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 0.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile100"]
@@ -1152,7 +1250,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile101" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 0.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile101"]
@@ -1163,7 +1262,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile102" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 1.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile102"]
@@ -1174,7 +1274,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile103" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 1.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile103"]
@@ -1185,7 +1286,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile104" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile104"]
@@ -1196,7 +1298,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile105" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile105"]
@@ -1207,7 +1310,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile106" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile106"]
@@ -1218,7 +1322,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile107" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 1.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile107"]
@@ -1229,7 +1334,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile108" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile108"]
@@ -1240,7 +1346,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile109" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 0.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile109"]
@@ -1251,7 +1358,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile110" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 0.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile110"]
@@ -1262,7 +1370,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile111" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 0.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile111"]
@@ -1273,7 +1382,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile112" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 3.75, 0.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile112"]
@@ -1284,7 +1394,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile113" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 0.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile113"]
@@ -1295,7 +1406,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile114" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 0.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile114"]
@@ -1306,7 +1418,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile115" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 0.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile115"]
@@ -1317,7 +1430,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile116" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 0.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile116"]
@@ -1328,7 +1442,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile117" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 0.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile117"]
@@ -1339,7 +1454,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile118" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 1.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile118"]
@@ -1350,7 +1466,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile119" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 1.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile119"]
@@ -1361,7 +1478,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile120" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile120"]
@@ -1370,21 +1488,10 @@ script = ExtResource("2_unaav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
 shape = SubResource("BoxShape3D_unaav")
 
-[node name="Tile121" type="MeshInstance3D" parent="Tiles"]
-transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 11, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
-script = ExtResource("2_unaav")
-walkable = false
-
-[node name="Area3D" type="Area3D" parent="Tiles/Tile121"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile121/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
-shape = SubResource("BoxShape3D_unaav")
-
 [node name="Tile122" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile122"]
@@ -1395,7 +1502,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile123" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 1.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile123"]
@@ -1406,7 +1514,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile124" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile124"]
@@ -1417,7 +1526,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile125" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 0.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile125"]
@@ -1428,7 +1538,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile126" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 0.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile126"]
@@ -1439,7 +1550,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile127" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 0.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile127"]
@@ -1450,7 +1562,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile128" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 1.25, 0.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile128"]
@@ -1461,7 +1574,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile129" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 0.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile129"]
@@ -1472,7 +1586,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile130" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 0.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile130"]
@@ -1483,7 +1598,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile131" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 0.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile131"]
@@ -1494,7 +1610,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile132" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 0.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile132"]
@@ -1505,7 +1622,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile133" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 0.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile133"]
@@ -1516,7 +1634,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile134" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 1.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile134"]
@@ -1527,7 +1646,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile135" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 1.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile135"]
@@ -1538,7 +1658,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile136" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile136"]
@@ -1549,7 +1670,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile137" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile137"]
@@ -1560,7 +1682,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile138" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile138"]
@@ -1571,7 +1694,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile139" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 1.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile139"]
@@ -1582,7 +1706,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile140" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile140"]
@@ -1593,7 +1718,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile141" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 0.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile141"]
@@ -1604,7 +1730,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile142" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 0.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile142"]
@@ -1615,7 +1742,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile143" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 0.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile143"]
@@ -1626,7 +1754,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile144" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -1.25, 0.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile144"]
@@ -1637,7 +1766,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile145" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile145"]
@@ -1648,7 +1778,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile146" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile146"]
@@ -1659,7 +1790,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile147" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile147"]
@@ -1670,7 +1802,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile148" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile148"]
@@ -1681,7 +1814,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile149" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile149"]
@@ -1692,7 +1826,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile150" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile150"]
@@ -1703,7 +1838,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile151" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 1.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile151"]
@@ -1714,7 +1850,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile152" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile152"]
@@ -1725,7 +1862,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile153" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile153"]
@@ -1736,7 +1874,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile154" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile154"]
@@ -1747,7 +1886,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile155" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 1.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile155"]
@@ -1758,7 +1898,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile156" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile156"]
@@ -1769,7 +1910,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile157" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile157"]
@@ -1780,7 +1922,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile158" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile158"]
@@ -1791,7 +1934,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile159" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile159"]
@@ -1802,7 +1946,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile160" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -3.75, 0.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile160"]
@@ -1813,7 +1958,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile161" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 0.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile161"]
@@ -1824,7 +1970,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile162" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 0.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile162"]
@@ -1835,7 +1982,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile163" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 0.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile163"]
@@ -1846,7 +1994,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile164" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 1.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile164"]
@@ -1857,7 +2006,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile165" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 1.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile165"]
@@ -1868,7 +2018,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile166" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 1.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile166"]
@@ -1879,7 +2030,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile167" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 0.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile167"]
@@ -1890,7 +2042,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile168" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile168"]
@@ -1901,7 +2054,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile169" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile169"]
@@ -1912,7 +2066,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile170" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile170"]
@@ -1923,7 +2078,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile171" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 0.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile171"]
@@ -1934,7 +2090,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile172" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile172"]
@@ -1945,7 +2102,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile173" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 1.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile173"]
@@ -1956,7 +2114,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile174" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 1.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile174"]
@@ -1967,7 +2126,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile175" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 0.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile175"]
@@ -1978,7 +2138,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile176" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -6.25, 0.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile176"]
@@ -1989,7 +2150,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile177" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile177"]
@@ -2000,7 +2162,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile178" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile178"]
@@ -2011,7 +2174,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile179" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile179"]
@@ -2022,7 +2186,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile180" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile180"]
@@ -2031,21 +2196,10 @@ script = ExtResource("2_unaav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
 shape = SubResource("BoxShape3D_unaav")
 
-[node name="Tile181" type="MeshInstance3D" parent="Tiles"]
-transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 11, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
-script = ExtResource("2_unaav")
-walkable = false
-
-[node name="Area3D" type="Area3D" parent="Tiles/Tile181"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile181/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
-shape = SubResource("BoxShape3D_unaav")
-
 [node name="Tile182" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile182"]
@@ -2056,7 +2210,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile183" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile183"]
@@ -2067,7 +2222,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile184" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile184"]
@@ -2078,7 +2234,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile185" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile185"]
@@ -2089,7 +2246,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile186" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile186"]
@@ -2100,7 +2258,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile187" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile187"]
@@ -2111,7 +2270,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile188" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile188"]
@@ -2120,21 +2280,10 @@ script = ExtResource("2_unaav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
 shape = SubResource("BoxShape3D_unaav")
 
-[node name="Tile189" type="MeshInstance3D" parent="Tiles"]
-transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 11, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
-script = ExtResource("2_unaav")
-walkable = false
-
-[node name="Area3D" type="Area3D" parent="Tiles/Tile189"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile189/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
-shape = SubResource("BoxShape3D_unaav")
-
 [node name="Tile190" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile190"]
@@ -2145,7 +2294,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile191" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile191"]
@@ -2156,7 +2306,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile192" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -8.75, 1.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile192"]
@@ -2167,7 +2318,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile193" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile193"]
@@ -2178,7 +2330,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile194" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile194"]
@@ -2189,7 +2342,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile195" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile195"]
@@ -2200,7 +2354,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile196" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile196"]
@@ -2209,21 +2364,10 @@ script = ExtResource("2_unaav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
 shape = SubResource("BoxShape3D_unaav")
 
-[node name="Tile197" type="MeshInstance3D" parent="Tiles"]
-transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 11, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
-script = ExtResource("2_unaav")
-walkable = false
-
-[node name="Area3D" type="Area3D" parent="Tiles/Tile197"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile197/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
-shape = SubResource("BoxShape3D_unaav")
-
 [node name="Tile198" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile198"]
@@ -2234,7 +2378,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile199" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile199"]
@@ -2245,7 +2390,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile200" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile200"]
@@ -2256,7 +2402,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile201" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile201"]
@@ -2267,7 +2414,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile202" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile202"]
@@ -2278,7 +2426,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile203" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile203"]
@@ -2289,7 +2438,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile204" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile204"]
@@ -2298,21 +2448,10 @@ script = ExtResource("2_unaav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
 shape = SubResource("BoxShape3D_unaav")
 
-[node name="Tile205" type="MeshInstance3D" parent="Tiles"]
-transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 11, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
-script = ExtResource("2_unaav")
-walkable = false
-
-[node name="Area3D" type="Area3D" parent="Tiles/Tile205"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile205/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
-shape = SubResource("BoxShape3D_unaav")
-
 [node name="Tile206" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile206"]
@@ -2323,7 +2462,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile207" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile207"]
@@ -2334,7 +2474,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile208" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -11.25, 1.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile208"]
@@ -2345,7 +2486,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile209" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile209"]
@@ -2356,7 +2498,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile210" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile210"]
@@ -2367,7 +2510,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile211" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile211"]
@@ -2378,7 +2522,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile212" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile212"]
@@ -2387,21 +2532,10 @@ script = ExtResource("2_unaav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
 shape = SubResource("BoxShape3D_unaav")
 
-[node name="Tile213" type="MeshInstance3D" parent="Tiles"]
-transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 11, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
-script = ExtResource("2_unaav")
-walkable = false
-
-[node name="Area3D" type="Area3D" parent="Tiles/Tile213"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile213/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
-shape = SubResource("BoxShape3D_unaav")
-
 [node name="Tile214" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile214"]
@@ -2412,7 +2546,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile215" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile215"]
@@ -2423,7 +2558,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile216" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile216"]
@@ -2434,7 +2570,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile217" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile217"]
@@ -2445,7 +2582,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile218" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile218"]
@@ -2456,7 +2594,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile219" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile219"]
@@ -2467,7 +2606,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile220" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile220"]
@@ -2476,21 +2616,10 @@ script = ExtResource("2_unaav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
 shape = SubResource("BoxShape3D_unaav")
 
-[node name="Tile221" type="MeshInstance3D" parent="Tiles"]
-transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 11, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
-script = ExtResource("2_unaav")
-walkable = false
-
-[node name="Area3D" type="Area3D" parent="Tiles/Tile221"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tiles/Tile221/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
-shape = SubResource("BoxShape3D_unaav")
-
 [node name="Tile222" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile222"]
@@ -2501,7 +2630,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile223" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile223"]
@@ -2512,7 +2642,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile224" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile224"]
@@ -2523,7 +2654,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile225" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile225"]
@@ -2534,7 +2666,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile226" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile226"]
@@ -2545,7 +2678,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile227" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile227"]
@@ -2556,7 +2690,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile228" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile228"]
@@ -2567,7 +2702,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile229" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile229"]
@@ -2578,7 +2714,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile230" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile230"]
@@ -2589,7 +2726,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile231" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile231"]
@@ -2600,7 +2738,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile232" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile232"]
@@ -2611,7 +2750,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile233" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile233"]
@@ -2622,7 +2762,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile234" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile234"]
@@ -2633,7 +2774,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile235" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile235"]
@@ -2644,7 +2786,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile236" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile236"]
@@ -2655,7 +2798,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile237" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile237"]
@@ -2666,7 +2810,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile238" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile238"]
@@ -2677,7 +2822,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile239" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile239"]
@@ -2688,7 +2834,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile240" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile240"]
@@ -2699,7 +2846,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile241" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, 18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile241"]
@@ -2710,7 +2858,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile242" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, 16.2505)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile242"]
@@ -2721,7 +2870,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile243" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, 13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile243"]
@@ -2732,7 +2882,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile244" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, 11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile244"]
@@ -2743,7 +2894,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile245" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, 8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile245"]
@@ -2754,7 +2906,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile246" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, 6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile246"]
@@ -2765,7 +2918,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile247" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, 3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile247"]
@@ -2776,7 +2930,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile248" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, 1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile248"]
@@ -2787,7 +2942,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile249" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, -1.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile249"]
@@ -2798,7 +2954,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile250" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, -3.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile250"]
@@ -2809,7 +2966,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile251" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, -6.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile251"]
@@ -2820,7 +2978,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile252" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, -8.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile252"]
@@ -2831,7 +2990,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile253" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, -11.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile253"]
@@ -2842,7 +3002,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile254" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, -13.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile254"]
@@ -2853,7 +3014,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile255" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, -16.25)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile255"]
@@ -2864,7 +3026,8 @@ shape = SubResource("BoxShape3D_unaav")
 
 [node name="Tile256" type="MeshInstance3D" parent="Tiles"]
 transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -18.75, 1.45, -18.75)
-mesh = SubResource("PlaneMesh_huimw")
+layers = 0
+mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile256"]
@@ -2873,10 +3036,13 @@ script = ExtResource("2_unaav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
 shape = SubResource("BoxShape3D_unaav")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.947053, 0.321076, 0, -0.321076, -0.947053, 0, 48.7058, 0)
-
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, 0.2, 0)
 mesh = SubResource("ArrayMesh_8c8j4")
 skeleton = NodePath("")
+
+[connection signal="tile_selected" from="Tiles/Tile1" to="." method="_on_tile_selected"]
+[connection signal="input_event" from="Tiles/Tile1/Area3D" to="Tiles/Tile1" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Tiles/Tile1/Area3D" to="Tiles/Tile1" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Tiles/Tile1/Area3D" to="Tiles/Tile1" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="Tiles/Tile2/Area3D" to="Tiles/Tile2" method="_on_area_3d_input_event"]
