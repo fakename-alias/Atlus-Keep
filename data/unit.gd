@@ -1,5 +1,4 @@
 extends Node3D
-class_name Unit
 
 @onready var teamRoot : Node3D = $".."
 @onready var unitRoot : Node3D = $"../.."
@@ -9,6 +8,7 @@ var level : LevelNotGrid
 var cell: Tile
 
 var team
+@export var movePoints = 5
 
 func _ready():
 	if teamRoot.name == "UnitPlayers":
@@ -33,4 +33,6 @@ func move_to_cell(c: Vector3i):
 	if level.has_cell(c) and level.get_cell(c).get_occupant() == null:
 		position = level.get_cell(c).position
 		print(name, " moved to cell position: ", str(c))
+		
+		set_cell(cell)
 	return

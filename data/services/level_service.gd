@@ -6,6 +6,8 @@ class_name LevelNotGrid
 @export var cellSize : float = 1.25
 @export var yLevel : float = 0.0
 
+@onready var game : Node3D = $".."
+
 var tileAt: = {}
 var boundsMin: Vector3i
 var boundsMax: Vector3i
@@ -93,3 +95,8 @@ func tile_cost(c: Vector3i):
 
 func _on_tile_selected(tile: Tile) -> void:
 	print('IT FUCKING WORKED - TILE SELECTED: ', tile.name)
+	
+	if tile.has_occupant():
+		game.select_unit(tile.get_occupant())
+	
+	game.update_hud()
