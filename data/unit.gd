@@ -34,5 +34,6 @@ func move_to_cell(c: Vector3i):
 		position = level.get_cell(c).position
 		print(name, " moved to cell position: ", str(c))
 		
-		set_cell(cell)
+		set_cell(level.get_cell(c))
+		print("New cell: ", str(level.get_cell(c)))
 	return

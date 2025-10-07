@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://fo2ng2ble3l"]
+[gd_scene load_steps=8 format=3 uid="uid://fo2ng2ble3l"]
 
 [ext_resource type="Script" uid="uid://bxiusvt4efsm" path="res://data/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://buyvcneq8d7r5" path="res://scenes/level/level_notgrid.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dxcbvqwlpysgc" path="res://scenes/level/HUD.tscn" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://b3klkwrpmxees" path="res://scenes/characters/Unit.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://cn2dxptjms35k" path="res://scripts/pathfinder.gd" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://luknukrpwoyf" path="res://scenes/characters/BigManLeonard.tscn" id="6_p57ef"]
+[ext_resource type="Script" uid="uid://nc7n155ser21" path="res://scenes/turn_manager.gd" id="7_u5sy4"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_lnu2h")
@@ -15,7 +17,7 @@ script = ExtResource("1_lnu2h")
 transform = Transform3D(1, 0, 0, 0, -0.9942, 0.107548, 0, -0.107548, -0.9942, 0, 18.1851, -7.04803)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.623102, 0.782141, 0, -0.782141, 0.623102, 0, 16.1947, 22.7125)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 29.6078, 0)
 
 [node name="Hud" parent="Camera3D" instance=ExtResource("4_iywne")]
 
@@ -28,6 +30,8 @@ script = ExtResource("4_p57ef")
 
 [node name="PlaceholderPlayer" parent="Units/UnitPlayers" instance=ExtResource("4_lbhrr")]
 
+[node name="BigManLeonard" parent="Units/UnitPlayers" instance=ExtResource("6_p57ef")]
+
 [node name="UnitEnemies" type="Node3D" parent="Units"]
 
 [node name="Enemi" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
@@ -37,3 +41,4 @@ script = ExtResource("4_p57ef")
 [node name="Enemy" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
 
 [node name="TurnManager" type="Node" parent="."]
+script = ExtResource("7_u5sy4")

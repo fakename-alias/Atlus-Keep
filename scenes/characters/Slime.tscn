@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dht5xet6e73si"]
+
+[ext_resource type="Script" uid="uid://cpc3g0wj1da2l" path="res://data/unit.gd" id="1_qb22b"]
+[ext_resource type="Texture2D" uid="uid://d2hspevnebc4i" path="res://icon.svg" id="2_ac2ri"]
+
+[node name="Unit" type="Node3D"]
+script = ExtResource("1_qb22b")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1.32966, 0)
+texture = ExtResource("2_ac2ri")

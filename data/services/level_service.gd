@@ -98,5 +98,7 @@ func _on_tile_selected(tile: Tile) -> void:
 	
 	if tile.has_occupant():
 		game.select_unit(tile.get_occupant())
+	else:
+		print(tile.name, " has no occupant")
 	
 	game.update_hud()

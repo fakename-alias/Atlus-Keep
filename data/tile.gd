@@ -118,10 +118,18 @@ func has_occupant() -> bool:
 func set_occupant(unit: Node3D):
 	occupant = unit
 
+func clear_move():
+	moving = false
+	selected = false
+	set_occupant(null)
+
 func highlight(mode: int):
-	## 1: hover, 2: selected, 3: moveable
+	## 1: hover, 2: selected, 3: moveable, 0: clear
 	layers = 1
 	match mode:
+		0:
+			moving = false
+			layers = 0
 		1:
 			color.albedo_color = Color(0,0,1)
 		2:
@@ -138,11 +146,14 @@ func highlight(mode: int):
 ## Handles tile clicking
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event.is_action_pressed("select"):
+		
+		print("Moving: ", moving, " -- Selected: ", selected)
 		if !moving:
-			print("Tile clicked: ", self.name, " - Occupant: ", str(get_occupant()))
-			return_all_adjacent_nodes()
+			#print("Tile clicked: ", self.name, " - Occupant: ", str(get_occupant()))
+			#return_all_adjacent_nodes()
 			emit_signal("tile_selected", self)
-			selected = true
+			if has_occupant():
+				selected = true
 		
 		elif moving:
 			print("Moving!")

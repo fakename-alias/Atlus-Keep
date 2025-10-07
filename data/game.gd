@@ -24,7 +24,7 @@ func _ready():
 	
 	#region == Unit Initialization Test ==
 	for unit in playerUnits:
-		var random = randi_range(0, 200)
+		var random = randi_range(0, 1)
 		unit.spawn(level)
 		
 		while levelTiles[random].has_occupant():
@@ -70,6 +70,13 @@ func _on_move_pressed() -> void:
 
 func _on_move(tile) -> void:
 	selectedUnit.move_to_cell(tile)
+	for c in reachable.keys():
+		level.get_cell(c).highlight(0)
+		level.get_cell(c).clear_move()
+	level.get_cell(tile).set_occupant(selectedUnit)
+	selectedUnit = null
+	reachable.clear()
+	update_hud()
 
 func update_hud() -> void:
 	if selectedUnit != null:
