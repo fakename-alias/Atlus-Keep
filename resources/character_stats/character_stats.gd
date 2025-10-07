@@ -96,11 +96,20 @@ func get_effective_lck() -> int:
 func get_max_hp() -> int:
 	return 50 + get_effective_con() * hp_per_con
 
+func get_current_hp() -> int:
+	return hp
+
 func get_max_stamina() -> int:
 	return 10 + get_effective_dex() * stam_per_dex
 
+func get_current_stamina() -> int:
+	return stamina
+
 func get_max_mana() -> int:
 	return 5 + get_effective_int() * mana_per_int
+
+func get_current_mana() -> int:
+	return mana
 
 func get_invetory_columns() -> int:
 	return int(floor(get_effective_str() * inventory_col_per_str))  # base 4 + STR scaling

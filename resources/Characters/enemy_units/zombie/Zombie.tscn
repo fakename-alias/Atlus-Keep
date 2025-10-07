@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6mn7kg7gldci"]
+
+[ext_resource type="Script" uid="uid://bkwqfafnjhy63" path="res://resources/Characters/enemy_units/zombie/zombie.gd" id="1_ygnmg"]
+[ext_resource type="Resource" uid="uid://de3nox56dwkye" path="res://resources/Characters/enemy_units/zombie/zombie.tres" id="2_2c0vf"]
+[ext_resource type="Texture2D" uid="uid://dqe1ejhkxr3a0" path="res://assets/sprites/ENEMIES.png" id="2_ia1jk"]
+[ext_resource type="Script" uid="uid://bmgoi5s874elb" path="res://scripts/stat_card.gd" id="3_ia1jk"]
+[ext_resource type="PackedScene" uid="uid://cum250u7fsgt0" path="res://resources/Test Stuff/health bar.tscn" id="5_uugfi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2c0vf"]
+size = Vector3(0.124939, 0.295715, 0.041748)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ccsue"]
+viewport_path = NodePath("HealthBarViewport")
+
+[node name="Zombie" type="Node3D"]
+script = ExtResource("1_ygnmg")
+stats = ExtResource("2_2c0vf")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture_filter = 0
+texture = ExtResource("2_ia1jk")
+region_enabled = true
+region_rect = Rect2(32, 2, 12, 29)
+script = ExtResource("3_ia1jk")
+stats = ExtResource("2_2c0vf")
+
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00241089, 0.00308228, 0.00378418)
+shape = SubResource("BoxShape3D_2c0vf")
+
+[node name="HealthBarViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(128, 32)
+
+[node name="HealthBarUI" parent="HealthBarViewport" instance=ExtResource("5_uugfi")]
+
+[node name="HealthBarSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.194541, 0)
+texture = SubResource("ViewportTexture_ccsue")
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 4)
+
+[connection signal="input_event" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_mouse_exited"]

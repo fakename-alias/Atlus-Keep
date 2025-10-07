@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://6j627t0ljq8c"]
 
-[ext_resource type="Script" uid="uid://bmgoi5s874elb" path="res://in-combat stat card/stat_card.gd" id="2_d2w08"]
+[ext_resource type="Script" uid="uid://bmgoi5s874elb" path="res://scripts/stat_card.gd" id="2_d2w08"]
 [ext_resource type="Texture2D" uid="uid://bdtcv55i62dny" path="res://in-combat stat card/slime.png" id="2_xqx8w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d2w08"]
