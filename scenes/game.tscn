@@ -1,31 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://fo2ng2ble3l"]
+[gd_scene load_steps=7 format=3 uid="uid://fo2ng2ble3l"]
 
-[ext_resource type="PackedScene" uid="uid://d4gkjxnh52xpn" path="res://resources/Test Stuff/TESTTEXT.glb" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bxiusvt4efsm" path="res://data/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://buyvcneq8d7r5" path="res://scenes/level/level_notgrid.tscn" id="2_yqjtg"]
-
-[sub_resource type="TorusMesh" id="TorusMesh_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dxcbvqwlpysgc" path="res://scenes/level/HUD.tscn" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://b3klkwrpmxees" path="res://scenes/characters/Unit.tscn" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://cn2dxptjms35k" path="res://scripts/pathfinder.gd" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://luknukrpwoyf" path="res://scenes/characters/BigManLeonard.tscn" id="6_p57ef"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_lnu2h")
 
-[node name="TESTTEXT" parent="." instance=ExtResource("1_80nbo")]
-transform = Transform3D(0.221628, 0, 0, 0, 0.0463861, -0.359369, 0, 0.128666, 0.129558, -0.341736, 4.10739, -0.00823295)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.204086, -0.978953, 0, 0.978953, -0.204086, 0, 18.1851, -7.04803)
-
 [node name="LevelNotgrid" parent="." instance=ExtResource("2_yqjtg")]
 
-[node name="Donut" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2104, 7.58603, 0)
-mesh = SubResource("TorusMesh_lnu2h")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.9942, 0.107548, 0, -0.107548, -0.9942, 0, 18.1851, -7.04803)
+light_color = Color(0.980828, 0.864897, 0.598182, 1)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0247637, 0.999693, 0, -0.999693, 0.0247637, 0, 29.8295, 0.920282)
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, 0, 29.7931, 0)
+
+[node name="Hud" parent="Camera3D" instance=ExtResource("4_iywne")]
+
+[node name="Pathfinder" type="Node" parent="."]
+script = ExtResource("4_p57ef")
 
 [node name="Units" type="Node3D" parent="."]
 
 [node name="UnitPlayers" type="Node3D" parent="Units"]
 
+[node name="PlaceholderPlayer" parent="Units/UnitPlayers" instance=ExtResource("4_lbhrr")]
+
+[node name="BigManLeonard" parent="Units/UnitPlayers" instance=ExtResource("6_p57ef")]
+
 [node name="UnitEnemies" type="Node3D" parent="Units"]
+
+[node name="Enemi" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
+
+[node name="Eneme" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
+
+[node name="Enemy" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxcbvqwlpysgc"]
+
+[ext_resource type="Script" uid="uid://ckfghjotr5xwu" path="res://scripts/hud.gd" id="1_ialcg"]
+
+[node name="Hud" type="Control"]
+light_mask = 0
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_ialcg")
+
+[node name="Move" type="Button" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 608.0
+offset_right = 204.0
+offset_bottom = 639.0
+text = "Move"
+
+[node name="UnitInfo" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 819.0
+offset_bottom = 40.0
+text = "This is a placeholder for unit text"

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4jyq83q32xei"]
+
+[ext_resource type="PackedScene" uid="uid://i0tcj0y8x2qa" path="res://assets/levels/tutorial.glb" id="1_eal01"]
+[ext_resource type="PackedScene" uid="uid://ctmbg6g48l6rk" path="res://scenes/level/Tile.tscn" id="2_rjx7e"]
+
+[node name="TutorialLevel" type="Node3D"]
+
+[node name="tutorial" parent="." instance=ExtResource("1_eal01")]
+
+[node name="Tiles" type="Node3D" parent="."]
+
+[node name="Tile" parent="Tiles" instance=ExtResource("2_rjx7e")]
+transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 8.75, 1, 6.25)

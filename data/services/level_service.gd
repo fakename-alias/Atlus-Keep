@@ -6,6 +6,8 @@ class_name LevelNotGrid
 @export var cellSize : float = 1.25
 @export var yLevel : float = 0.0
 
+@onready var game : Node3D = $".."
+
 var tileAt: = {}
 var boundsMin: Vector3i
 var boundsMax: Vector3i
@@ -39,7 +41,7 @@ func _ready() -> void:
 					min(boundsMax.x, cell.x),
 					0,
 					min(boundsMax.z, cell.z))
-	print(tileAt.size())
+	print(str(tileAt.size()))
 
 # Return cell from world position
 func world_to_cell(worldPos: Vector3) -> Vector3i:
@@ -55,6 +57,18 @@ func cell_to_world(cell: Vector3i) -> Vector3:
 # Return if tile at cell position c
 func has_cell(c: Vector3i) -> bool:
 	return tileAt.has(c)
+
+func get_cell(c: Vector3i) -> Tile:
+	if not has_cell(c):
+		return null
+	
+	var tile = tileAt[c]
+	var meta = tile as Tile
+	if meta:		
+		return meta
+	else:
+		print("No tile at: " + str(c))
+	return null;
 
 # Check if tile is walkable at cell pos c
 func tile_walkable(c : Vector3i) -> bool:
@@ -77,3 +91,14 @@ func tile_cost(c: Vector3i):
 	var meta = tile as Tile
 	if meta:
 		return meta.terrain_cost
+
+
+#func _on_tile_selected(tile: Tile) -> void:
+	#print('IT FUCKING WORKED - TILE SELECTED: ', tile.name)
+	#
+	#if tile.has_occupant():
+		#game.select_unit(tile.get_occupant())
+	#else:
+		#print(tile.name, " has no occupant")
+	#
+	#game.update_hud()
