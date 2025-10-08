@@ -17,6 +17,9 @@ static func get_reachable(level: LevelNotGrid, unit: Node3D) -> Dictionary:
 			if not level.has_cell(n):
 				continue
 			
+			if level.get_cell(n).has_occupant():
+				continue
+			
 			var stepCost := level.get_cell(n).terrain_cost
 			var newCost := costSoFar + stepCost
 			if newCost <= unit.movePoints and (not visited.has(n) or newCost < int(visited[n])):
@@ -39,6 +42,6 @@ static func _keys_as_set(d: Dictionary) -> Dictionary:
 	var out: Dictionary = {}
 	for k in d.keys():
 		out[k] = true
-	print(str(d))
-	print("Out: ", str(out))
+	#print(str(d))
+	#print("Out: ", str(out))
 	return out

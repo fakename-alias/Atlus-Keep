@@ -2489,6 +2489,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -13.75, 1.45, 18.75)
 layers = 0
 mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
+terrain_cost = 2
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile209"]
 
@@ -2669,6 +2670,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, -16.25, 1.45, 16.2505)
 layers = 0
 mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
+terrain_cost = 3
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile226"]
 
@@ -3041,7 +3043,6 @@ transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, 0.2, 0)
 mesh = SubResource("ArrayMesh_8c8j4")
 skeleton = NodePath("")
 
-[connection signal="tile_selected" from="Tiles/Tile1" to="." method="_on_tile_selected"]
 [connection signal="input_event" from="Tiles/Tile1/Area3D" to="Tiles/Tile1" method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Tiles/Tile1/Area3D" to="Tiles/Tile1" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Tiles/Tile1/Area3D" to="Tiles/Tile1" method="_on_area_3d_mouse_exited"]

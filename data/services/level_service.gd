@@ -93,12 +93,12 @@ func tile_cost(c: Vector3i):
 		return meta.terrain_cost
 
 
-func _on_tile_selected(tile: Tile) -> void:
-	print('IT FUCKING WORKED - TILE SELECTED: ', tile.name)
-	
-	if tile.has_occupant():
-		game.select_unit(tile.get_occupant())
-	else:
-		print(tile.name, " has no occupant")
-	
-	game.update_hud()
+#func _on_tile_selected(tile: Tile) -> void:
+	#print('IT FUCKING WORKED - TILE SELECTED: ', tile.name)
+	#
+	#if tile.has_occupant():
+		#game.select_unit(tile.get_occupant())
+	#else:
+		#print(tile.name, " has no occupant")
+	#
+	#game.update_hud()

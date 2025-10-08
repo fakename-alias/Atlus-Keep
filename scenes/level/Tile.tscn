@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctmbg6g48l6rk"]
+
+[ext_resource type="ArrayMesh" uid="uid://ba14l5scjd75w" path="res://resources/indicator.obj" id="1_se1q1"]
+[ext_resource type="Script" uid="uid://vthil6vav1ua" path="res://data/tile.gd" id="2_lyxii"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7nkx"]
+size = Vector3(1.99927, 0.0735168, 2.00092)
+
+[node name="Tile" type="MeshInstance3D"]
+transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 0, 0, 0)
+layers = 0
+mesh = ExtResource("1_se1q1")
+script = ExtResource("2_lyxii")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00183105, -0.00752258, 0.000396729)
+shape = SubResource("BoxShape3D_s7nkx")

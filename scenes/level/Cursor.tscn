@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://mjyrel7cgjau"]
-
-[node name="Cursor" type="Node3D"]
-
-[node name="RayCast3D" type="RayCast3D" parent="."]

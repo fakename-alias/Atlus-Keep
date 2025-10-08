@@ -18,11 +18,11 @@ class_name Tile
 
 var color : StandardMaterial3D
 var occupant : Node3D = null
-var selected : bool = false
-var moving: bool = false
+##var selected : bool = false
+##var moving: bool = false
 
-signal tile_selected(tile)
-signal move(tile)
+##signal tile_selected(tile)
+##signal move(tile)
 
 func _ready() -> void:
 	node_east = get_node_east()
@@ -35,30 +35,32 @@ func _ready() -> void:
 	color = StandardMaterial3D.new()
 	color.albedo_color = Color(1, 0, 0)
 	set_surface_override_material(0, color)
+	
 	layers = 0 ## Make tile invisible
 	area.input_ray_pickable = true
+	#endregion#
 	
 	## Connect signals
-	if not area.input_event.is_connected(_on_area_3d_input_event):
-		area.input_event.connect(_on_area_3d_input_event)
-		#print("connected on " + str(self.name))
-	if not area.mouse_entered.is_connected(_on_area_3d_mouse_entered):
-		area.mouse_entered.connect(_on_area_3d_mouse_entered)
-	if not area.mouse_exited.is_connected( _on_area_3d_mouse_exited):
-		area.mouse_exited.connect( _on_area_3d_mouse_exited)
+	#if not area.input_event.is_connected(_on_area_3d_input_event):
+		#area.input_event.connect(_on_area_3d_input_event)
+		##print("connected on " + str(self.name))
+	#if not area.mouse_entered.is_connected(_on_area_3d_mouse_entered):
+		#area.mouse_entered.connect(_on_area_3d_mouse_entered)
+	#if not area.mouse_exited.is_connected( _on_area_3d_mouse_exited):
+		#area.mouse_exited.connect( _on_area_3d_mouse_exited)
+	#
+	#if not tile_selected.is_connected(root._on_tile_selected):
+		#tile_selected.connect(root._on_tile_selected)
+	#if not move.is_connected(game._on_move):
+		#move.connect(game._on_move)
 	
-	if not tile_selected.is_connected(root._on_tile_selected):
-		tile_selected.connect(root._on_tile_selected)
-	if not move.is_connected(game._on_move):
-		move.connect(game._on_move)
-	#endregion#
 
-func _mouse_entered():
-	print(self.name)
+#func _mouse_entered():
+	#print(self.name)
 
 #Get cell pos
 func get_cell_pos() -> Vector3i:
-	return root.world_to_cell(self.position)
+	return root.world_to_cell(self.global_position)
 
 #region == To be condensed ==
 func get_node_east():
@@ -106,73 +108,71 @@ func return_all_adjacent_nodes() -> void:
 ## Get occupant
 func get_occupant() -> Node3D:
 	return occupant
-
 ## Check if tile is occupied
 func has_occupant() -> bool:
 	if occupant == null:
 		return false
 	else:
 		return true
-
 ## Setter for occupant
 func set_occupant(unit: Node3D):
 	occupant = unit
 
-func clear_move():
-	moving = false
-	selected = false
-	set_occupant(null)
+#func clear_move():
+	#moving = false
+	#selected = false
+	#set_occupant(null)
 
 func highlight(mode: int):
 	## 1: hover, 2: selected, 3: moveable, 0: clear
 	layers = 1
 	match mode:
 		0:
-			moving = false
+			#moving = false
 			layers = 0
 		1:
-			color.albedo_color = Color(0,0,1)
+			color.albedo_color = Color(0,0,1) #blue
 		2:
-			color.albedo_color = Color(1,0,0)
-			moving = true
+			color.albedo_color = Color(1,0,0) #red
+			#moving = true
 		3:
-			color.albedo_color = Color(0,1,0)
+			color.albedo_color = Color(0,1,0) #green
 		_:
 			print("Something went wrong at tile.gd/highlight")
 
 
-## Signal functions -- Port over to game.gd
-
-## Handles tile clicking
-func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event.is_action_pressed("select"):
-		
-		print("Moving: ", moving, " -- Selected: ", selected)
-		if !moving:
-			#print("Tile clicked: ", self.name, " - Occupant: ", str(get_occupant()))
-			#return_all_adjacent_nodes()
-			emit_signal("tile_selected", self)
-			if has_occupant():
-				selected = true
-		
-		elif moving:
-			print("Moving!")
-			emit_signal("move", get_cell_pos())
-			
-	
-	if event.is_action_pressed('deselect'):
-		selected = false
-		layers = 0
-
-#region - Handles mouse hovering on tile
-func _on_area_3d_mouse_entered() -> void:
-	print("Hovering over: ", self.name)
-	if !selected and !moving:
-		layers = 1
-		highlight(1)
-
-func _on_area_3d_mouse_exited() -> void:
-	print("Stopped hovering over: ",self.name)
-	if !selected and !moving:
-		layers = 0
-#endregion
+### Signal functions -- Port over to game.gd
+#
+### Handles tile clicking
+#func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	#if event.is_action_pressed("select"):
+		#
+		#print("Moving: ", moving, " -- Selected: ", selected)
+		#if !moving:
+			##print("Tile clicked: ", self.name, " - Occupant: ", str(get_occupant()))
+			##return_all_adjacent_nodes()
+			#emit_signal("tile_selected", self)
+			#if has_occupant():
+				#selected = true
+		#
+		#elif moving:
+			#print("Moving!")
+			#emit_signal("move", get_cell_pos())
+			#
+	#
+	#if event.is_action_pressed('deselect'):
+		#selected = false
+		#layers = 0
+#
+##region - Handles mouse hovering on tile
+#func _on_area_3d_mouse_entered() -> void:
+	#print("Hovering over: ", self.name)
+	#if !selected and !moving:
+		#layers = 1
+		#highlight(1)
+#
+#func _on_area_3d_mouse_exited() -> void:
+	#print("Stopped hovering over: ",self.name)
+	#if !selected and !moving:
+		#layers = 0
+##endregion
