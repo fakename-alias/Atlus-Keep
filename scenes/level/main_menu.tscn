@@ -114,5 +114,6 @@ texture_hover = SubResource("AtlasTexture_1ajci")
 [node name="Pause Menu" parent="." instance=ExtResource("5_8ln24")]
 visible = false
 
+[connection signal="pressed" from="menu buttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="menu buttons/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="menu buttons/exit" to="." method="_on_exit_pressed"]

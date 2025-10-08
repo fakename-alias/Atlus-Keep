@@ -108,6 +108,7 @@ func _on_tile_area_input(camera: Node, event: InputEvent,
 					state = GameState.IDLE
 				else:
 					print("Non-reachable tile selected")
+					print("Tile date - ", tile.name, " - Occupant: ", tile.get_occupant())
 	
 	elif event.is_action_pressed("deselect"):
 		clear_selection_and_highlights()
@@ -143,6 +144,7 @@ func _on_move(cellPos: Vector3i) -> void:
 	
 	if selectedUnit == null : return; 
 	
+	selected_unit_tile().set_occupant(null)
 	selectedUnit.move_to_cell(cellPos)
 	for c in reachable.keys():
 		level.get_cell(c).highlight(0)

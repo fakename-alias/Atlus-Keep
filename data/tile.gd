@@ -118,10 +118,8 @@ func has_occupant() -> bool:
 func set_occupant(unit: Node3D):
 	occupant = unit
 
-#func clear_move():
-	#moving = false
-	#selected = false
-	#set_occupant(null)
+func clear() -> void:
+	pass
 
 func highlight(mode: int):
 	## 1: hover, 2: selected, 3: moveable, 0: clear
