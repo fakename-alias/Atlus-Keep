@@ -26,3 +26,19 @@ layout_mode = 0
 offset_right = 819.0
 offset_bottom = 40.0
 text = "This is a placeholder for unit text"
+
+[node name="Attack" type="Button" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 566.0
+offset_right = 203.0
+offset_bottom = 597.0
+text = "Attack!"
+
+[node name="Attack2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 524.0
+offset_right = 203.0
+offset_bottom = 555.0
+text = "Inventory"

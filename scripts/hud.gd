@@ -2,6 +2,7 @@ extends Control
 
 @onready var game= $"../.."
 @onready var moveButton = $"Move"
+@onready var attackButton = $Attack
 @onready var infoBar = $UnitInfo
 
 func _ready() -> void:
