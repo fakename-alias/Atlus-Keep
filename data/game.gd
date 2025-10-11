@@ -180,6 +180,11 @@ func update_hud() -> void:
 	if selectedUnit != null:
 		hud.infoBar.text = ("Selected Unit - " + str(selectedUnit.name) + " // Remaining Action Points: " + str(selectedUnit.movePoints))
 		hud.attackButton.disabled = false
+		
+		if selectedUnit.movePoints <= 0:
+			hud.moveButton.disabled = true
+		else:
+			hud.moveButton.disabled = false
 	else:
 		hud.infoBar.text = "No Selected Unit"
 		hud.attackButton.disabled = true
