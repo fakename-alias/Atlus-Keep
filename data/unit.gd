@@ -8,14 +8,18 @@ var level : LevelNotGrid
 var cell: Tile
 var isMoving : bool = false
 
+var playerUnit : bool
 var team
 @export var movePoints = 5
+@export var attackRange = 2
 
 func _ready():
 	if teamRoot.name == "UnitPlayers":
+		playerUnit = true
 		print("Player unit initialized")
 	elif teamRoot.name == "UnitEnemies":
 		print("Enemy unit initialized")
+		playerUnit = false
 	else:
 		print("Error - Unit not in team initialized")
 	pass

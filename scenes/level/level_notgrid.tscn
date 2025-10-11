@@ -111,6 +111,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1.25, 18.75, 0.45, 6.25)
 layers = 0
 mesh = ExtResource("2_s17jq")
 script = ExtResource("2_unaav")
+walkable = false
 
 [node name="Area3D" type="Area3D" parent="Tiles/Tile6"]
 

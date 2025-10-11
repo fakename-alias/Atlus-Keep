@@ -83,6 +83,20 @@ func _on_move_pressed() -> void:
 	state = GameState.MOVING
 	print("Move Button press detected.")
 
+func _on_attack_pressed() -> void:
+	if selectedUnit == null: # Move should do nothign if no unit
+		return
+		
+	# Get cells within range
+	reachable = pathfinder.get_units_reachable(level, selectedUnit)
+	
+	#Highlight all cells in reange
+	for c in reachable.keys():
+		level.get_cell(c).highlight(2)
+	state = GameState.ATTACKING
+	print("Attack Button pressed")
+	pass
+
 #region == Tile Area3D signals ==#
 
 func _on_tile_area_input(camera: Node, event: InputEvent, 
@@ -168,7 +182,7 @@ func _on_move(cellPos: Vector3i) -> void:
 	state = GameState.ANIMATING
 	# Animate along the path (await to block further input)
 	await selectedUnit.animate_path(path, level, 0.1)  # adjust speed here
-	selectedUnit.use_movepoints(cost)
+	#selectedUnit.use_movepoints(cost)
 	
 	# End selection and reset HUD/state
 	selectedUnit = null

@@ -3,6 +3,7 @@ class_name Pathfinder
 
 ## This class isn't meant to do anything other than execute pathfinding algorithms ##
 
+# Get all reachable tiles
 static func get_reachable(level: LevelNotGrid, unit: Node3D) -> Dictionary:
 	# returns { Vector3i : bool } as { cell : walkable }
 	var frontier := [unit.cell.get_cell_pos()]
@@ -30,6 +31,41 @@ static func get_reachable(level: LevelNotGrid, unit: Node3D) -> Dictionary:
 	print("Pathfinder executed")
 	return _keys_as_set(visited)
 
+static func get_units_reachable(level: LevelNotGrid, unit: Node3D) -> Dictionary:
+	# Returns { Vector3i : bool } for tiles that have units and are within move range
+	# E.g { Vector3i(cellpos) : true/walkable }
+	var frontier := [unit.cell.get_cell_pos()]
+	var visited: Dictionary = {}
+	visited[unit.cell.get_cell_pos()] = 0  # Cost so far; init as 0
+	
+	while frontier.size() > 0:
+		var current: Vector3i = frontier.pop_front()
+		var costSoFar: int = visited[current]
+		
+		for n in _neighbors(current):
+			if not level.has_cell(n):
+				continue
+
+			var cell = level.get_cell(n)
+			var stepCost : int = 1		## Attack range is unaffected by terrain cost
+			var newCost : int = costSoFar + stepCost
+			
+			# Explore all cells until movePoints are empty
+			if newCost <= unit.attackRange and (not visited.has(n) or newCost < int(visited[n])):
+				visited[n] = newCost
+				frontier.push_back(n)
+	
+	# Filter: only keep positions that actually have an occupant
+	var result: Dictionary = {}
+	for cell in visited.keys():
+		var tile = level.get_cell(cell)
+		if tile.has_occupant() and cell != unit.cell.get_cell_pos():
+			if tile.get_occupant().playerUnit != unit.playerUnit:
+				result[cell] = true
+	
+	return result
+
+
 ## Find the ideal path - Use for unit movement
 static func find_path(level : LevelNotGrid, unit: Node3D, goal: Vector3i) -> Array[Vector3i]:
 	
@@ -52,6 +88,7 @@ static func find_path(level : LevelNotGrid, unit: Node3D, goal: Vector3i) -> Arr
 			if not level.has_cell(n): continue
 			if level.get_cell(n).has_occupant() and n != goal:
 				continue
+			#if not level.get_cell(n).walkable: continue
 			
 			var newCost : int = int(costSoFar[current]) + int(level.get_cell(n).terrain_cost)
 			if (not costSoFar.has(n)) or (newCost < int(costSoFar[n])):
