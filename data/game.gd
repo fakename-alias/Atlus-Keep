@@ -15,10 +15,11 @@ var reachable: Dictionary = {} # { Vector3i: bool } as {cell_pos:true/false}
 var playerUnits : Array[Node] = []
 var enemyUnits : Array[Node] = []
 
-enum GameState { IDLE, MOVING, ATTACKING }
+enum GameState { IDLE, MOVING, ANIMATING, ATTACKING }
 var state: int = GameState.IDLE
 
 func _ready():
+	update_hud()
 	
 	#region == Tile signals ==
 	for t in levelTiles:
@@ -109,6 +110,10 @@ func _on_tile_area_input(camera: Node, event: InputEvent,
 				else:
 					print("Non-reachable tile selected")
 					print("Tile date - ", tile.name, " - Occupant: ", tile.get_occupant())
+			
+			## Do nothing while unit is moving
+			GameState.ANIMATING:
+				pass
 	
 	elif event.is_action_pressed("deselect"):
 		clear_selection_and_highlights()
@@ -140,24 +145,44 @@ func clear_selection_and_highlights():
 	print("Selection cleared!")
 #endregion
 
+## Updated with animated movement
 func _on_move(cellPos: Vector3i) -> void:
 	
-	if selectedUnit == null : return; 
+	if selectedUnit == null : return;
+	if state == GameState.ANIMATING: return;
 	
 	selected_unit_tile().set_occupant(null)
-	selectedUnit.move_to_cell(cellPos)
+	
+	# Build the path
+	var path: Array[Vector3i] = pathfinder.find_path(level, selectedUnit, cellPos)
+	var cost: int = path.size() - 1
+	if path.is_empty():
+		print("No path to destination.")
+		return
+	
+	# Clear highlights before moving (optional: keep them until finished)
 	for c in reachable.keys():
 		level.get_cell(c).highlight(0)
-	level.get_cell(cellPos).set_occupant(selectedUnit)
-	selectedUnit = null
 	reachable.clear()
+	
+	state = GameState.ANIMATING
+	# Animate along the path (await to block further input)
+	await selectedUnit.animate_path(path, level, 0.1)  # adjust speed here
+	selectedUnit.use_movepoints(cost)
+	
+	# End selection and reset HUD/state
+	selectedUnit = null
 	update_hud()
+	state = GameState.IDLE
 
+## Debug == Updating HUD
 func update_hud() -> void:
 	if selectedUnit != null:
-		hud.infoBar.text = ("Selected Unit - " + str(selectedUnit.name))
+		hud.infoBar.text = ("Selected Unit - " + str(selectedUnit.name) + " // Remaining Action Points: " + str(selectedUnit.movePoints))
+		hud.attackButton.disabled = false
 	else:
 		hud.infoBar.text = "No Selected Unit"
+		hud.attackButton.disabled = true
 	
 func select_unit(unit: Node3D) -> void:
 	selectedUnit = unit
