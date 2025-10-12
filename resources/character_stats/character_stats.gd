@@ -36,16 +36,63 @@ class_name CharacterStats
 @export var min_hit: float = 0.05         # floor + ceiling prevent extremes
 @export var max_hit: float = 0.98
 
+# --- Signals ---
+signal hp_changed(current: int, max: int)
+signal stamina_changed(current: int, max: int)
+signal mana_changed(current: int, max: int)
+
 # --- Standard pools --- 
-var hp: int
-var stamina: int
-var mana: int
+var hp: int : set = set_hp, get = get_hp
+var stamina: int : set = set_stamina, get = get_stamina
+var mana: int : set = set_mana, get = get_mana
+
+# --- Getters and Setters for pools ---
+func set_hp(v: int) -> void:
+	hp = clampi(v, 0, get_max_hp())
+	hp_changed.emit(hp, get_max_hp())
+
+func get_hp() -> int:
+	return hp
+
+func set_stamina(v: int) -> void:
+	hp = clampi(v, 0, get_max_stamina())
+	hp_changed.emit(hp, get_max_stamina())
+
+func get_stamina() -> int:
+	return stamina
+
+func set_mana(v: int) -> void:
+	hp = clampi(v, 0, get_max_mana())
+	hp_changed.emit(hp, get_max_mana())
+
+func get_mana() -> int:
+	return mana
 
 func init_current_pools() -> void:
-	hp = get_max_hp()
-	stamina = get_max_stamina()
-	mana = get_max_mana()
+	set_hp(get_max_hp())
+	set_stamina(get_max_stamina())
+	set_mana(get_max_mana())
 
+# --- methods for damaging/healing/spending
+
+func heal(amount: int) -> void:
+	set_hp(get_hp() + amount)
+
+func take_damage(amount: int) -> void:
+	set_hp(get_hp() - amount)
+
+func spend_stamina(amount: int) -> bool:
+	if get_stamina() < amount:
+		return false
+	set_stamina(get_stamina() - amount)
+	return true
+
+func spend_mana(amount: int) -> bool:
+	if get_mana() < amount:
+		return false
+	set_mana(get_mana() - amount)
+	return true
+	
 # --- Leveling System --- 
 func init_leveling() -> void:
 	if leveling:
@@ -53,9 +100,9 @@ func init_leveling() -> void:
 
 func _on_level_up(new_level: int) -> void:
 	apply_level_up(new_level)
-	hp = get_max_hp()
-	mana = get_max_mana()
-	stamina = get_max_stamina()
+	set_hp(get_max_hp())
+	set_mana(get_max_mana())
+	set_stamina(get_max_stamina())
 	#optional refill on lvl up
 
 func apply_level_up(new_level: int) -> void:
@@ -111,7 +158,7 @@ func get_max_mana() -> int:
 func get_current_mana() -> int:
 	return mana
 
-func get_invetory_columns() -> int:
+func get_inventory_columns() -> int:
 	return int(floor(get_effective_str() * inventory_col_per_str))  # base 4 + STR scaling
 
 func get_speed() -> float:
@@ -159,52 +206,55 @@ func roll_crit() -> bool:
 
 #for these weapon base and armor value are default values until armor and weapons are coded
 func physical_attack(target: CharacterStats) -> int:
-	var weapon:= equipment.main_hand #what if no weapon equipped?
-	if stamina < weapon.stamina_cost:
-		return 0 #print exhausted
-	if not roll_hit(target):
-		#edit to display "Miss"
+	if equipment == null or equipment.main_hand == null:
 		return 0
-	#grab pc's weapon damage
+	var weapon := equipment.main_hand
+	# physical uses stamina
+	if not spend_stamina(weapon.stamina_cost):
+		return 0
+	if not roll_hit(target):
+		return 0
+
 	var damage: float = weapon.base_damage * get_phys_damage_multiplier()
-	
 	if roll_crit():
 		damage *= crit_damage_multiplier
-	#grab the targets armor value and decrease the damage by it
-	damage -= target.equipment.total_phys_armor()
-	#edit to add indicator that atk was a crit
-	stamina -= weapon.stamina_cost
+	damage -= target.equipment.total_phys_armor() if target.equipment else 0.0
+	damage = maxf(damage, 0.0)
+	target.take_damage(int(round(damage)))
 	return int(round(damage))
 
 func ranged_attack(target: CharacterStats) -> int:
-	var weapon:= equipment.main_hand
-	if stamina < weapon.stamina_cost:
-		return 0 #print exhausted
-	if not roll_hit(target):
-		#edit to display "Miss"
+	if equipment == null or equipment.main_hand == null:
 		return 0
-	
+	var weapon := equipment.main_hand
+	# ranged also uses stamina (change if you want mana instead)
+	if not spend_stamina(weapon.stamina_cost):
+		return 0
+	if not roll_hit(target):
+		return 0
+
 	var damage: float = weapon.base_damage * get_ranged_damage_multiplier()
-	
 	if roll_crit():
 		damage *= crit_damage_multiplier
-	damage -= target.equipment.total_phys_armor()
-	#edit to add indicator that atk was a crit
-	stamina -= weapon.mana_cost
+	damage -= target.equipment.total_phys_armor() if target.equipment else 0.0
+	damage = maxf(damage, 0.0)
+	target.take_damage(int(round(damage)))
 	return int(round(damage))
 
 func magic_attack(target: CharacterStats) -> int:
-	var weapon:= equipment.main_hand
-	if mana < weapon.mana_cost:
-		return 0 #Exhausted
+	if equipment == null or equipment.main_hand == null:
+		return 0
+	var weapon := equipment.main_hand
+	# magic uses mana
+	if not spend_mana(weapon.mana_cost):
+		return 0
 	if not roll_hit(target):
-		#edit to display "Miss"
 		return 0
 
-	var damage = equipment.main_hand.base_damage * get_magic_damage_multiplier()
+	var damage: float = weapon.base_damage * get_magic_damage_multiplier()
 	if roll_crit():
 		damage *= crit_damage_multiplier
-	damage -= target.equipment.total_magic_resist()
-	#edit to add indicator that atk was a crit
-	mana -= weapon.mana_cost
+	damage -= target.equipment.total_magic_resist() if target.equipment else 0.0
+	damage = maxf(damage, 0.0)
+	target.take_damage(int(round(damage)))
 	return int(round(damage))

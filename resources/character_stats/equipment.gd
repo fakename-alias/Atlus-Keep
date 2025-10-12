@@ -200,3 +200,13 @@ func bonus_lck() -> int:
 	if ring1: total +=ring1.luck_bonus
 	if ring2: total += ring2.luck_bonus
 	return total
+
+func get_main_weapon() -> Weapon:
+	return main_hand as Weapon
+
+func get_off_hand_weapon() -> Weapon:
+	return off_hand as Weapon
+
+func get_equipped_attacks(base_attacks: Array[Attack]) -> Array[Attack]:
+	var output: Array[Attack] = []
+	if base_attacks: out.apend_array(base_attack)
