@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://fo2ng2ble3l"]
+[gd_scene load_steps=8 format=3 uid="uid://fo2ng2ble3l"]
 
 [ext_resource type="Script" uid="uid://bxiusvt4efsm" path="res://data/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://buyvcneq8d7r5" path="res://scenes/level/level_notgrid.tscn" id="2_yqjtg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3klkwrpmxees" path="res://scenes/characters/Unit.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://cn2dxptjms35k" path="res://scripts/pathfinder.gd" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://luknukrpwoyf" path="res://scenes/characters/BigManLeonard.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bimc4ubtt53ft" path="res://scenes/level/objects/barrel.tscn" id="7_u5sy4"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_lnu2h")
@@ -41,3 +42,5 @@ script = ExtResource("4_p57ef")
 [node name="Enemy" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
 
 [node name="Environment" type="Node" parent="Units"]
+
+[node name="Barrel" parent="Units/Environment" instance=ExtResource("7_u5sy4")]

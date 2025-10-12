@@ -1,4 +1,5 @@
 extends Interactable
+class_name PlayableUnit
 
 @onready var teamRoot : Node = $".."
 @onready var unitRoot : Node = $"../.."

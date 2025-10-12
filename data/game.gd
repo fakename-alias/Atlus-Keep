@@ -12,8 +12,9 @@ extends Node3D
 var selectedUnit : Node3D = null
 var reachable: Dictionary = {} # { Vector3i: bool } as {cell_pos:true/false}
 
-var playerUnits : Array[Node] = []
-var enemyUnits : Array[Node] = []
+var playerUnits : Array[Interactable] = []
+var enemyUnits : Array[Interactable] = []
+var environmentObjects : Array[Interactable] = []
 
 enum GameState { IDLE, MOVING, ANIMATING, ATTACKING }
 var state: int = GameState.IDLE
@@ -37,8 +38,11 @@ func _ready():
 			a.mouse_exited.connect(_on_tile_mouse_exit.bind(tile))
 	#endregion
 	
-	playerUnits = unitRoot.get_child(0).get_children()
-	enemyUnits = unitRoot.get_child(1).get_children()
+	#playerUnits = unitRoot.get_child(0).get_children()
+	#enemyUnits = unitRoot.get_child(1).get_children()
+	_gather_children(unitRoot.get_child(0), playerUnits)
+	_gather_children(unitRoot.get_child(1), enemyUnits)
+	_gather_children(unitRoot.get_child(2), environmentObjects)
 	
 	#region == Unit Initialization Test ==
 	for unit in playerUnits:
@@ -66,6 +70,20 @@ func _ready():
 		unit.move_to_cell(cell)
 		unit.set_cell(levelTiles[random])
 		levelTiles[random].set_occupant(unit)
+	
+	for object in environmentObjects:
+		var random = randi_range(0, 200)
+		object.spawn(level)
+		
+		while levelTiles[random].has_occupant():
+			random = randi_range(0,200)
+			print("Tile has occupant")
+			
+		var cell = levelTiles[random].get_cell_pos()
+		object.move_to_cell(cell)
+		object.set_cell(levelTiles[random])
+		levelTiles[random].set_occupant(object)
+		print("Object ", object.name, " assigned to: ", levelTiles[random].name)
 		
 	#endregion
 
@@ -98,7 +116,7 @@ func _on_attack_pressed() -> void:
 	pass
 
 #region == Tile Area3D signals ==#
-
+## All tile click logic
 func _on_tile_area_input(camera: Node, event: InputEvent, 
 	event_position: Vector3, normal: Vector3, shape_idx: int, tile: Tile) -> void:
 	
@@ -109,7 +127,7 @@ func _on_tile_area_input(camera: Node, event: InputEvent,
 				if selectedUnit != null:
 					clear_selection_and_highlights()
 				
-				if tile.has_occupant():
+				if tile.has_occupant() and tile.get_occupant() is PlayableUnit:
 					select_unit(tile.get_occupant())
 					tile.highlight(2)
 					update_hud()
@@ -132,7 +150,13 @@ func _on_tile_area_input(camera: Node, event: InputEvent,
 			## Atk
 			GameState.ATTACKING:
 				print("Attack queued")
-				pass
+				if selectedUnit == null: ## Should never happen, but just in case
+					clear_selection_and_highlights()
+				
+				if tile.get_occupant() is EnviromentalObject:
+					tile.get_occupant().die()
+					selectedUnit.use_movepoints(1)
+					clear_selection_and_highlights()
 	
 	elif event.is_action_pressed("deselect"):
 		clear_selection_and_highlights()
@@ -210,3 +234,8 @@ func update_hud() -> void:
 	
 func select_unit(unit: Interactable) -> void:
 	selectedUnit = unit
+
+func _gather_children(root: Node, array: Array):
+	for child in root.get_children():
+		array.append(child)
+	pass

@@ -59,9 +59,14 @@ static func get_units_reachable(level: LevelNotGrid, unit: Interactable) -> Dict
 	var result: Dictionary = {}
 	for cell in visited.keys():
 		var tile = level.get_cell(cell)
+		
 		if tile.has_occupant() and cell != unit.cell.get_cell_pos():
-			if tile.get_occupant().playerUnit != unit.playerUnit:
-				result[cell] = true
+			if tile.get_occupant() is EnviromentalObject:
+				result[cell] = true			## Detect objects
+			
+			else:
+				if tile.get_occupant().playerUnit != unit.playerUnit:
+					result[cell] = true
 	
 	return result
 

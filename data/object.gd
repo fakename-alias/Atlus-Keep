@@ -11,6 +11,11 @@ var isMoving : bool = false
 func spawn(level: LevelNotGrid):
 	self.level = level
 	var pos = level.world_to_cell(position)
+	
+func die():
+	cell.set_occupant(null)
+	queue_free()
+	pass
 
 ## Setters and getters for cells to avoid typing issues
 func set_cell(cell: Tile):
