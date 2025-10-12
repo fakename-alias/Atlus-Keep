@@ -42,11 +42,21 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 	if (event is InputEventMouseButton):
 		if ((event.button_index == MOUSE_BUTTON_LEFT) and (event.double_click)):
 			show_stat_menu()
-
+			#since stat_card is a universal script, get_parent() returns what unit we are interacting with
+			var parent_unit = get_parent()
+			#available_attacks is the helper function we declared in the units script to show available actions
+			if parent_unit and "available_attacks" in parent_unit:
+				print("--- Available Attacks for ", parent_unit.stats.name, "---")
+				for atk in parent_unit.available_attacks:
+					var kind_label = Attack.Kind.keys()[atk.kind]
+					print("%s | Kind: %s | Power: %d | Range: %d" % [atk.name, kind_label, atk.power, atk.range_tiles])
+			else:
+				print("No available attacks found for this unit or invalid parent.")
 
 func _on_area_3d_mouse_entered() -> void:
 	menu_shown = false
 	if hp_bar: hp_bar.visible = true
+	print(stats.get_hp())
 
 
 func _on_area_3d_mouse_exited() -> void:

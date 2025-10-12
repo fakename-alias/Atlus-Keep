@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://dqmnvete7o275"]
+
+[ext_resource type="Script" uid="uid://b6bweiwdf85gt" path="res://resources/Item Stats/Attacks/Attack.gd" id="1_f6ukv"]
+
+[resource]
+script = ExtResource("1_f6ukv")
+kind = 2
+name = "Thorn Whip"
+power = 10
+stamina_cost = 5
+mana_cost = 10
+range_tiles = 3
+heal = 0
+tags = Array[String]([])
+metadata/_custom_type_script = "uid://b6bweiwdf85gt"

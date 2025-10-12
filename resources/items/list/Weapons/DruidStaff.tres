@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=5 format=3 uid="uid://23s10jcv6oe8"]
+
+[ext_resource type="Script" uid="uid://b6bweiwdf85gt" path="res://resources/Item Stats/Attacks/Attack.gd" id="1_06c8s"]
+[ext_resource type="Script" uid="uid://buflns3vvnpuv" path="res://resources/items/stats/weapon.gd" id="2_1nl4j"]
+[ext_resource type="Resource" uid="uid://dqmnvete7o275" path="res://resources/Item Stats/Attacks/ThornWhip.tres" id="2_tdmrp"]
+[ext_resource type="Resource" uid="uid://bbma4cyyrng84" path="res://resources/Item Stats/Attacks/Heal.tres" id="3_lpoiv"]
+
+[resource]
+script = ExtResource("2_1nl4j")
+type = 0
+base_damage = 10.0
+stamina_cost = 5
+mana_cost = 0
+accuracy_bonus = 0.0
+range_tiles = 1
+two_handed = false
+attacks = Array[ExtResource("1_06c8s")]([ExtResource("2_tdmrp"), ExtResource("3_lpoiv")])
+name = "Unnamed"
+description = "No Description"
+stackable = false
+max_stack = 1
+weight = 1
+value = 0
+metadata/_custom_type_script = "uid://buflns3vvnpuv"

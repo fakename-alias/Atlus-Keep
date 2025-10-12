@@ -200,3 +200,30 @@ func bonus_lck() -> int:
 	if ring1: total +=ring1.luck_bonus
 	if ring2: total += ring2.luck_bonus
 	return total
+
+func get_main_weapon() -> Weapon:
+	return main_hand as Weapon
+
+func get_off_hand_weapon() -> Weapon:
+	return off_hand as Weapon
+
+# --- Gather equipments attacks (actions?) ---
+func get_equipped_attacks(base_attacks: Array[Attack]) -> Array[Attack]:
+	var output: Array[Attack] = []
+	if base_attacks: output.append_array(base_attacks)
+	
+	if main_hand:
+		output.append_array(main_hand.attacks)
+		
+	#if weapon is two handed then attacks are gathered in previous line
+	if off_hand is Weapon and not is_two_handed():
+		output.append_array((off_hand as Weapon).attacks)
+	
+	#remove duplicate attacks
+	var seen:= {}
+	var uniq: Array[Attack] = []
+	for attack in output:
+		if attack and not seen.has(attack.name):
+			seen[attack.name] = true
+			uniq.append(attack)
+	return uniq

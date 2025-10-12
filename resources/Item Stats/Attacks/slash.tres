@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://d3mxes6hunexn"]
+
+[ext_resource type="Script" uid="uid://b6bweiwdf85gt" path="res://resources/Item Stats/Attacks/Attack.gd" id="1_pwtpk"]
+
+[resource]
+script = ExtResource("1_pwtpk")
+name = "Slash"
+power = 10
+stamina_cost = 5
+mana_cost = 0
+range_tiles = 1
+tags = Array[String](["melee", "slash"])
+metadata/_custom_type_script = "uid://b6bweiwdf85gt"

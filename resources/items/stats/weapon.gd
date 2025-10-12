@@ -12,3 +12,4 @@ enum WeaponType { MELEE, RANGED, MAGIC }
 @export var accuracy_bonus: float = 0.0
 @export var range_tiles: int = 1
 @export var two_handed: bool = false
+@export var attacks: Array[Attack] = []
