@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://bbma4cyyrng84"]
+
+[ext_resource type="Script" uid="uid://b6bweiwdf85gt" path="res://resources/Item Stats/Attacks/Attack.gd" id="1_ccsb4"]
+
+[resource]
+script = ExtResource("1_ccsb4")
+kind = 3
+name = "Heal"
+power = 0
+stamina_cost = 0
+mana_cost = 0
+range_tiles = 0
+heal = 20
+tags = Array[String]([])
+metadata/_custom_type_script = "uid://b6bweiwdf85gt"

@@ -47,6 +47,7 @@ var stamina: int : set = set_stamina, get = get_stamina
 var mana: int : set = set_mana, get = get_mana
 
 # --- Getters and Setters for pools ---
+
 func set_hp(v: int) -> void:
 	hp = clampi(v, 0, get_max_hp())
 	hp_changed.emit(hp, get_max_hp())
@@ -55,18 +56,20 @@ func get_hp() -> int:
 	return hp
 
 func set_stamina(v: int) -> void:
-	hp = clampi(v, 0, get_max_stamina())
-	hp_changed.emit(hp, get_max_stamina())
+	stamina = clampi(v, 0, get_max_stamina())
+	stamina_changed.emit(stamina, get_max_stamina())
 
 func get_stamina() -> int:
 	return stamina
 
 func set_mana(v: int) -> void:
-	hp = clampi(v, 0, get_max_mana())
-	hp_changed.emit(hp, get_max_mana())
+	mana = clampi(v, 0, get_max_mana())
+	mana_changed.emit(mana, get_max_mana())
 
 func get_mana() -> int:
 	return mana
+
+# --- Initialise base pools for unit ---
 
 func init_current_pools() -> void:
 	set_hp(get_max_hp())
@@ -113,7 +116,8 @@ func apply_level_up(new_level: int) -> void:
 	lck += 1
 	#tweak to our taste
 
-# --- Add Equipment Ring Bonuses --- 
+# --- Add Equipment Bonuses --- 
+
 func get_effective_str() -> int:
 	if equipment:
 		return str + equipment.bonus_str()

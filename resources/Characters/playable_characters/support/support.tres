@@ -1,6 +1,13 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=2 format=3 uid="uid://1h6c665qlxnp"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://1h6c665qlxnp"]
 
+[ext_resource type="Resource" uid="uid://23s10jcv6oe8" path="res://resources/items/list/Weapons/DruidStaff.tres" id="1_s16oe"]
 [ext_resource type="Script" uid="uid://bbq0dv2hard87" path="res://resources/character_stats/character_stats.gd" id="1_uo00n"]
+[ext_resource type="Script" uid="uid://cs70hxft2tgmh" path="res://resources/character_stats/equipment.gd" id="2_cc0g6"]
+
+[sub_resource type="Resource" id="Resource_qdmvb"]
+script = ExtResource("2_cc0g6")
+main_hand = ExtResource("1_s16oe")
+metadata/_custom_type_script = "uid://cs70hxft2tgmh"
 
 [resource]
 script = ExtResource("1_uo00n")
@@ -10,6 +17,7 @@ dex = 4
 con = 3
 int_stat = 7
 lck = 5
+equipment = SubResource("Resource_qdmvb")
 hp_per_con = 10
 stam_per_dex = 5
 mana_per_int = 10

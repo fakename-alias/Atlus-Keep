@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfm8m5bbffjni"]
+
+[ext_resource type="PackedScene" uid="uid://cu6nysuwrt1q7" path="res://resources/Characters/enemy_units/slime/Slime.tscn" id="1_2l740"]
+[ext_resource type="PackedScene" uid="uid://xx1wnyxbk8jr" path="res://resources/Characters/playable_characters/wizard/Wizard.tscn" id="2_31dkl"]
+[ext_resource type="PackedScene" uid="uid://dp4knwwoj3go6" path="res://resources/Characters/playable_characters/rogue/Rogue.tscn" id="3_ylf63"]
+[ext_resource type="PackedScene" uid="uid://dt72d37w5cgwe" path="res://resources/Characters/playable_characters/warrior/Warrior.tscn" id="4_udccc"]
+[ext_resource type="PackedScene" uid="uid://6iq1p7ihjrfk" path="res://resources/Characters/playable_characters/support/Support.tscn" id="5_0jog2"]
+[ext_resource type="PackedScene" uid="uid://b6mn7kg7gldci" path="res://resources/Characters/enemy_units/zombie/Zombie.tscn" id="6_fiy4r"]
+
+[node name="CharacterDisplay" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.132009, 0.22485, 0.464575)
+
+[node name="Slime" parent="." instance=ExtResource("1_2l740")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.301504, 0.100501, 0)
+
+[node name="Wizard" parent="." instance=ExtResource("2_31dkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0408957, 0.16169, 7.85366e-05)
+
+[node name="Rogue" parent="." instance=ExtResource("3_ylf63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0892169, 0.14367, -0.00645192)
+
+[node name="Warrior" parent="." instance=ExtResource("4_udccc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179349, 0.161904, -0.00645192)
+
+[node name="Support" parent="." instance=ExtResource("5_0jog2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.317962, 0.165456, 0)
+
+[node name="Zombie" parent="." instance=ExtResource("6_fiy4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.547745, 0.144607, -0.000392079)

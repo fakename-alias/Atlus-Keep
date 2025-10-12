@@ -20,7 +20,7 @@ stats = ExtResource("3_ty7t3")
 texture_filter = 0
 texture = ExtResource("2_fw2ii")
 region_enabled = true
-region_rect = Rect2(0, 0, 12, 32)
+region_rect = Rect2(70, 0, 9, 32)
 script = ExtResource("2_ty7t3")
 stats = ExtResource("3_ty7t3")
 

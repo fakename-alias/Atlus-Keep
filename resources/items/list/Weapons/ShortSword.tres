@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3 uid="uid://daooruwwl10lk"]
+[gd_resource type="Resource" script_class="Weapon" load_steps=4 format=3 uid="uid://daooruwwl10lk"]
 
-[ext_resource type="Script" uid="uid://buflns3vvnpuv" path="res://items/stats/weapon.gd" id="1_5e8cs"]
+[ext_resource type="Script" uid="uid://buflns3vvnpuv" path="res://resources/items/stats/weapon.gd" id="1_5e8cs"]
+[ext_resource type="Script" uid="uid://b6bweiwdf85gt" path="res://resources/Item Stats/Attacks/Attack.gd" id="1_ao77t"]
+[ext_resource type="Resource" uid="uid://d3mxes6hunexn" path="res://resources/Item Stats/Attacks/slash.tres" id="2_gah0l"]
 
 [resource]
 script = ExtResource("1_5e8cs")
@@ -11,8 +13,11 @@ mana_cost = 0
 accuracy_bonus = 0.0
 range_tiles = 1
 two_handed = false
+attacks = Array[ExtResource("1_ao77t")]([ExtResource("2_gah0l")])
 name = "Short Sword"
 description = "A rusty short sword found on the ground"
+stackable = false
+max_stack = 1
 weight = 1
 value = 5
 metadata/_custom_type_script = "uid://buflns3vvnpuv"
