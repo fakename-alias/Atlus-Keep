@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bimc4ubtt53ft"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8rxqu"]
+
+[node name="Barrel" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.825824, 0)
+mesh = SubResource("CylinderMesh_8rxqu")

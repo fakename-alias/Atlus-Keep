@@ -17,7 +17,7 @@ class_name Tile
 @export var node_south : Tile = null
 
 var color : StandardMaterial3D
-var occupant : Node3D = null
+var occupant : Interactable = null
 ##var selected : bool = false
 ##var moving: bool = false
 
@@ -106,7 +106,7 @@ func return_all_adjacent_nodes() -> void:
 	return
 
 ## Get occupant
-func get_occupant() -> Node3D:
+func get_occupant() -> Interactable:
 	return occupant
 ## Check if tile is occupied
 func has_occupant() -> bool:
@@ -115,7 +115,7 @@ func has_occupant() -> bool:
 	else:
 		return true
 ## Setter for occupant
-func set_occupant(unit: Node3D):
+func set_occupant(unit: Interactable):
 	occupant = unit
 
 func clear() -> void:
@@ -137,40 +137,3 @@ func highlight(mode: int):
 			color.albedo_color = Color(0,1,0) #green
 		_:
 			print("Something went wrong at tile.gd/highlight")
-
-
-### Signal functions -- Port over to game.gd
-#
-### Handles tile clicking
-#func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	#if event.is_action_pressed("select"):
-		#
-		#print("Moving: ", moving, " -- Selected: ", selected)
-		#if !moving:
-			##print("Tile clicked: ", self.name, " - Occupant: ", str(get_occupant()))
-			##return_all_adjacent_nodes()
-			#emit_signal("tile_selected", self)
-			#if has_occupant():
-				#selected = true
-		#
-		#elif moving:
-			#print("Moving!")
-			#emit_signal("move", get_cell_pos())
-			#
-	#
-	#if event.is_action_pressed('deselect'):
-		#selected = false
-		#layers = 0
-#
-##region - Handles mouse hovering on tile
-#func _on_area_3d_mouse_entered() -> void:
-	#print("Hovering over: ", self.name)
-	#if !selected and !moving:
-		#layers = 1
-		#highlight(1)
-#
-#func _on_area_3d_mouse_exited() -> void:
-	#print("Stopped hovering over: ",self.name)
-	#if !selected and !moving:
-		#layers = 0
-##endregion

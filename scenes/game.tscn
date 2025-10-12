@@ -24,18 +24,20 @@ transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4
 [node name="Pathfinder" type="Node" parent="."]
 script = ExtResource("4_p57ef")
 
-[node name="Units" type="Node3D" parent="."]
+[node name="Units" type="Node" parent="."]
 
-[node name="UnitPlayers" type="Node3D" parent="Units"]
+[node name="UnitPlayers" type="Node" parent="Units"]
 
 [node name="PlaceholderPlayer" parent="Units/UnitPlayers" instance=ExtResource("4_lbhrr")]
 
 [node name="BigManLeonard" parent="Units/UnitPlayers" instance=ExtResource("6_p57ef")]
 
-[node name="UnitEnemies" type="Node3D" parent="Units"]
+[node name="UnitEnemies" type="Node" parent="Units"]
 
 [node name="Enemi" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
 
 [node name="Eneme" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
 
 [node name="Enemy" parent="Units/UnitEnemies" instance=ExtResource("4_lbhrr")]
+
+[node name="Environment" type="Node" parent="Units"]

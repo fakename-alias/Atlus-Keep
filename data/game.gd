@@ -4,10 +4,10 @@ extends Node3D
 @onready var levelTileMaster: Node3D = $LevelNotgrid/Tiles
 @onready var levelTiles : Array[Node] = levelTileMaster.get_children()
 
-@onready var unitRoot = $Units
-@onready var camera = $Camera3D
-@onready var hud = $Camera3D/Hud
-@onready var pathfinder = $Pathfinder
+@onready var unitRoot : Node = $Units
+@onready var camera : Camera3D = $Camera3D
+@onready var hud : BattleUI = $Camera3D/Hud
+@onready var pathfinder : Node = $Pathfinder
 
 var selectedUnit : Node3D = null
 var reachable: Dictionary = {} # { Vector3i: bool } as {cell_pos:true/false}
@@ -128,6 +128,11 @@ func _on_tile_area_input(camera: Node, event: InputEvent,
 			## Do nothing while unit is moving
 			GameState.ANIMATING:
 				pass
+			
+			## Atk
+			GameState.ATTACKING:
+				print("Attack queued")
+				pass
 	
 	elif event.is_action_pressed("deselect"):
 		clear_selection_and_highlights()
@@ -203,5 +208,5 @@ func update_hud() -> void:
 		hud.infoBar.text = "No Selected Unit"
 		hud.attackButton.disabled = true
 	
-func select_unit(unit: Node3D) -> void:
+func select_unit(unit: Interactable) -> void:
 	selectedUnit = unit

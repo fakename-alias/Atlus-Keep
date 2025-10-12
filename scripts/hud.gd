@@ -1,4 +1,5 @@
 extends Control
+class_name BattleUI
 
 @onready var game= $"../.."
 @onready var moveButton = $"Move"

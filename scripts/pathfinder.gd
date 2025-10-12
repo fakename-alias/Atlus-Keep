@@ -4,7 +4,7 @@ class_name Pathfinder
 ## This class isn't meant to do anything other than execute pathfinding algorithms ##
 
 # Get all reachable tiles
-static func get_reachable(level: LevelNotGrid, unit: Node3D) -> Dictionary:
+static func get_reachable(level: LevelNotGrid, unit: Interactable) -> Dictionary:
 	# returns { Vector3i : bool } as { cell : walkable }
 	var frontier := [unit.cell.get_cell_pos()]
 	var visited: Dictionary = {}
@@ -31,7 +31,7 @@ static func get_reachable(level: LevelNotGrid, unit: Node3D) -> Dictionary:
 	print("Pathfinder executed")
 	return _keys_as_set(visited)
 
-static func get_units_reachable(level: LevelNotGrid, unit: Node3D) -> Dictionary:
+static func get_units_reachable(level: LevelNotGrid, unit: Interactable) -> Dictionary:
 	# Returns { Vector3i : bool } for tiles that have units and are within move range
 	# E.g { Vector3i(cellpos) : true/walkable }
 	var frontier := [unit.cell.get_cell_pos()]
@@ -67,7 +67,7 @@ static func get_units_reachable(level: LevelNotGrid, unit: Node3D) -> Dictionary
 
 
 ## Find the ideal path - Use for unit movement
-static func find_path(level : LevelNotGrid, unit: Node3D, goal: Vector3i) -> Array[Vector3i]:
+static func find_path(level : LevelNotGrid, unit: Interactable, goal: Vector3i) -> Array[Vector3i]:
 	
 	var start: Vector3i = unit.cell.get_cell_pos()		# Start with current cell pos
 	var cameFrom: Dictionary = {}
