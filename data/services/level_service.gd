@@ -38,9 +38,9 @@ func _ready() -> void:
 					0,
 					min(boundsMin.z, cell.z))
 			boundsMax = Vector3i(
-					min(boundsMax.x, cell.x),
+					max(boundsMax.x, cell.x),
 					0,
-					min(boundsMax.z, cell.z))
+					max(boundsMax.z, cell.z))
 	print(str(tileAt.size()))
 
 # Return cell from world position

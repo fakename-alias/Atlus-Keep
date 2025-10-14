@@ -11,6 +11,8 @@ extends Node3D
 
 var selectedUnit : Node3D = null
 var reachable: Dictionary = {} # { Vector3i: bool } as {cell_pos:true/false}
+#var path: Array[Vector3i] = [] # { Vector3i } as { cellposition }
+var lastHoverPath: Array[Vector3i] = []
 
 var playerUnits : Array[Interactable] = []
 var enemyUnits : Array[Interactable] = []
@@ -72,11 +74,11 @@ func _ready():
 		levelTiles[random].set_occupant(unit)
 	
 	for object in environmentObjects:
-		var random = randi_range(0, 200)
+		var random = randi_range(0, levelTiles.size() - 1)
 		object.spawn(level)
 		
 		while levelTiles[random].has_occupant():
-			random = randi_range(0,200)
+			random = randi_range(0,levelTiles.size() - 1)
 			print("Tile has occupant")
 			
 		var cell = levelTiles[random].get_cell_pos()
@@ -150,8 +152,14 @@ func _on_tile_area_input(camera: Node, event: InputEvent,
 			## Atk
 			GameState.ATTACKING:
 				print("Attack queued")
+				var c := tile.get_cell_pos()
 				if selectedUnit == null: ## Should never happen, but just in case
 					clear_selection_and_highlights()
+				
+				if not reachable.has(c):
+					print("Target attack out of range")
+					## Insert HUD update here or somehtign
+					return
 				
 				if tile.get_occupant() is EnviromentalObject:
 					tile.get_occupant().die()
@@ -162,14 +170,38 @@ func _on_tile_area_input(camera: Node, event: InputEvent,
 		clear_selection_and_highlights()
 
 func _on_tile_mouse_enter(tile: Tile) -> void:
-	if state == GameState.IDLE:
-		if tile != selected_unit_tile():
-			tile.highlight(1) #highlight hovered
+	
+	match state:
+		GameState.IDLE:
+			if tile != selected_unit_tile():
+				tile.highlight(1) #highlight hovered
+		
+		## Show preview path when hovering over moveable tile
+		GameState.MOVING:
+			if tile != selected_unit_tile() and reachable.has(tile.get_cell_pos()): ## Selected tile highlight should always take prio
+				lastHoverPath = pathfinder.find_path(level, selectedUnit, tile.get_cell_pos())
+				for c in lastHoverPath:
+					if reachable.has(c):
+						selected_unit_tile().highlight(3)
+						level.get_cell(c).highlight(3)
+					else:
+						level.get_cell(c).highlight(0)
 
 func _on_tile_mouse_exit(tile: Tile) -> void:
-	if state == GameState.IDLE:
-		if tile != selected_unit_tile(): # Tile hover only when selecting units
-			tile.highlight(0) #clear
+	
+	match state:
+		GameState.IDLE:
+			if tile != selected_unit_tile(): # Tile hover only when selecting units
+				tile.highlight(0) #clear
+		GameState.MOVING:
+			if tile != selected_unit_tile():
+				
+				## When leaving a tile, clear all preview highlights
+				for c in lastHoverPath:
+					if reachable.has(c):
+						level.get_cell(c).highlight(2) # Reset to red
+					else:
+						level.get_cell(c).highlight(0)
 #endregion
 
 #region == Helper Functions ==

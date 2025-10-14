@@ -27,7 +27,7 @@ static func get_reachable(level: LevelNotGrid, unit: Interactable) -> Dictionary
 				visited[n] = newCost
 				frontier.push_back(n)
 	
-	visited.erase(unit.cell)
+	visited.erase(unit.cell.get_cell_pos())
 	print("Pathfinder executed")
 	return _keys_as_set(visited)
 
@@ -132,7 +132,7 @@ static func _keys_as_set(d: Dictionary) -> Dictionary:
 	return out
 
 static func _manhattan(a: Vector3i, b: Vector3i) -> int:
-	return abs(a.x - b.x) + abs(a.z - b.z)
+	return (abs(a.x - b.x) + abs(a.z - b.z)) / 2
 
 static func _push_frontier(frontier: Array, cell: Vector3i, prio: int) -> void:
 	frontier.append({"c": cell, "p": prio})
@@ -141,7 +141,7 @@ static func _pop_lowest(frontier: Array) -> Vector3i:
 	var bestI := 0
 	var bestP = frontier[0]["p"]
 	for i in range(1, frontier.size()):
-		var p = frontier[0]["p"]
+		var p = frontier[i]["p"]
 		if p < bestP:
 			bestP = p
 			bestI = i
