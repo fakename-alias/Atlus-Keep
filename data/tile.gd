@@ -122,7 +122,7 @@ func clear() -> void:
 	pass
 
 func highlight(mode: int):
-	## 1: hover, 2: selected, 3: moveable, 0: clear
+	## 1: hover, 2: selected, 3: moveable, 4: path, 0: clear
 	layers = 1
 	match mode:
 		0:
@@ -135,5 +135,7 @@ func highlight(mode: int):
 			#moving = true
 		3:
 			color.albedo_color = Color(0,1,0) #green
+		4:
+			color.albedo_color = Color(0,0,0) #black?
 		_:
 			print("Something went wrong at tile.gd/highlight")

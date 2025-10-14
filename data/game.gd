@@ -208,13 +208,16 @@ func _on_move(cellPos: Vector3i) -> void:
 		level.get_cell(c).highlight(0)
 	reachable.clear()
 	
+	for c in path:
+		level.get_cell(c).highlight(4)
+	
 	state = GameState.ANIMATING
 	# Animate along the path (await to block further input)
 	await selectedUnit.animate_path(path, level, 0.1)  # adjust speed here
-	#selectedUnit.use_movepoints(cost)
+	selectedUnit.use_movepoints(cost)
 	
 	# End selection and reset HUD/state
-	selectedUnit = null
+	clear_selection_and_highlights()
 	update_hud()
 	state = GameState.IDLE
 
@@ -226,10 +229,13 @@ func update_hud() -> void:
 		
 		if selectedUnit.movePoints <= 0:
 			hud.moveButton.disabled = true
+			hud.attackButton.disabled = true
 		else:
+			hud.moveButton.disabled = false
 			hud.moveButton.disabled = false
 	else:
 		hud.infoBar.text = "No Selected Unit"
+		hud.moveButton.disabled = true
 		hud.attackButton.disabled = true
 	
 func select_unit(unit: Interactable) -> void:

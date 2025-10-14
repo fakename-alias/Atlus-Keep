@@ -44,3 +44,9 @@ script = ExtResource("4_p57ef")
 [node name="Environment" type="Node" parent="Units"]
 
 [node name="Barrel" parent="Units/Environment" instance=ExtResource("7_u5sy4")]
+
+[node name="Barrel2" parent="Units/Environment" instance=ExtResource("7_u5sy4")]
+
+[node name="Barrel3" parent="Units/Environment" instance=ExtResource("7_u5sy4")]
+
+[node name="Barrel4" parent="Units/Environment" instance=ExtResource("7_u5sy4")]
